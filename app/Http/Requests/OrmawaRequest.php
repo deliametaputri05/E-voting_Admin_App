@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
-class CompanyRequest extends FormRequest
+class OrmawaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +23,11 @@ class CompanyRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            // 'user_id' => auth()->id(),
-            'name' => 'required|max:255',
-            'picturePath' => 'image',
-            'desc' => 'required',
-            'website' => 'required',
-            'email' => 'required|email',
-            'category' => 'required',
-            'founded_year' => 'required|integer'
 
+        return [
+
+            'nama' => 'required|string',
+            'logo' => 'image',
 
         ];
     }
