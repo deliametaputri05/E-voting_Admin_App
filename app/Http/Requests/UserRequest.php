@@ -30,14 +30,8 @@ class UserRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'max:255'], // , 'unique:users'
             'password' => $this->passwordRules(),
             'noHp' => ['required', 'string', 'max:13'],
-            'address' => ['required', 'string', 'max:100'],
             'roles' => ['required', 'string', 'max:255'], // , 'in:USER, ADMIN'
-            // 'education' => ['required', 'string', 'max:255'],
-            // 'major' => ['required', 'string', 'max:255'],
-            // 'year' => ['required', 'integer'],
-            // 'gpa' => ['required', 'numeric'],
-            // 'level' => ['required', 'string', 'max:255'],
-            // 'skill' => ['required', 'string', 'max:255'],
+
         ];
     }
 }

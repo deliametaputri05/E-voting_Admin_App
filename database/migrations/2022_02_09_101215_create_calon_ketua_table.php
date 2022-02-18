@@ -24,7 +24,7 @@ class CreateCalonKetuaTable extends Migration
             $table->text('foto');
             $table->string('alamat');
             $table->string('moto');
-            $table->double('ipk');
+
 
             $table->softDeletes();
             $table->timestamps();
@@ -38,6 +38,6 @@ class CreateCalonKetuaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calon_ketuas');
+        Schema::dropIfExists('calon_ketua');
     }
 }

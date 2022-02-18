@@ -35,6 +35,6 @@ class CreatePemiraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemiras');
+        Schema::dropIfExists('pemira');
     }
 }

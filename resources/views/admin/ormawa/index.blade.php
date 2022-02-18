@@ -50,6 +50,7 @@
                                             <th>ID</th>
                                             <th>Nama</th>
                                             <th>Logo</th>
+                                            <th>Aksi</th>
 
                                         </tr>
                                     </thead>
@@ -58,7 +59,7 @@
                                         @forelse ($ormawa as $item)
                                         <tr>
                                             <td class="text-center">{{ $item->id }}</td>
-                                            <td class="text-center">{{ $item->nama }}</td>
+                                            <td>{{ $item->nama }}</td>
                                             <td>
                                                 <br>
                                                 <div class="avatar avatar-xl ">

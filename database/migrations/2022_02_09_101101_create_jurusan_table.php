@@ -13,6 +13,7 @@ class CreateJurusanTable extends Migration
      */
     public function up()
     {
+
         Schema::create('jurusan', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
@@ -30,6 +31,6 @@ class CreateJurusanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jurusans');
+        Schema::dropIfExists('jurusan');
     }
 }

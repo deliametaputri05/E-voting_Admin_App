@@ -225,7 +225,7 @@
                             <div class="collapse" id="kegiatan">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="">
+                                        <a href="/dashboard/pemira">
                                             <span class="sub-item">Data Pemira</span>
                                         </a>
                                     </li>

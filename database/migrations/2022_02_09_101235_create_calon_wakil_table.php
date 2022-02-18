@@ -24,7 +24,7 @@ class CreateCalonWakilTable extends Migration
             $table->text('foto');
             $table->string('alamat');
             $table->string('moto');
-            $table->double('ipk');
+
 
             $table->softDeletes();
             $table->timestamps();
@@ -38,6 +38,6 @@ class CreateCalonWakilTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calon_wakils');
+        Schema::dropIfExists('calon_wakil');
     }
 }

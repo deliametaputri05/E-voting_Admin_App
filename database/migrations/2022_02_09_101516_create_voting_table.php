@@ -31,6 +31,6 @@ class CreateVotingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('votings');
+        Schema::dropIfExists('voting');
     }
 }
