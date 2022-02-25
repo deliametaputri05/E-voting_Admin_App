@@ -1,13 +1,13 @@
 @extends('../admin.layout')
 
-@section('title', 'Data Pemira')
+@section('title', 'Data Jurusan')
 
 @section('container')
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Pemira</h4>
+                <h4 class="page-title">Jurusan</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Pemira</a>
+                        <a href="#">Jurusan</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -35,9 +35,9 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title"></h4>
-                                <a href="/dashboard/pemira/create" class="btn btn-primary btn-round ml-auto">
+                                <a href="/dashboard/jurusan/create" class="btn btn-primary btn-round ml-auto">
                                     <i class="fa fa-plus"></i>
-                                    Add Pemira
+                                    Add Jurusan
                                 </a>
                             </div>
                         </div>
@@ -49,40 +49,24 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Nama</th>
-                                            <th>Foto</th>
-                                            <!-- <th>Deskripsi</th> -->
-                                            <th>Tanggal</th>
-                                            <th>Mulai</th>
-                                            <th>Selesai</th>
+                                            <th>Jenjang</th>
                                             <th>Aksi</th>
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @forelse ($pemira as $item)
+                                        @forelse ($jurusan as $item)
                                         <tr>
                                             <td class="text-center">{{ $item->id }}</td>
                                             <td>{{ $item->nama }}</td>
-                                            <td>
-                                                <br>
-                                                <div class="avatar avatar-xl ">
-                                                    <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
-
-                                                </div>
-                                                <br>
-                                                <br>
-                                            </td>
-                                            <!-- <td>{{ $item->deskripsi }}</td> -->
-                                            <td>{{ $item->tanggal }}</td>
-                                            <td>{{ $item->waktu_mulai }}</td>
-                                            <td>{{ $item->waktu_selesai }}</td>
+                                            <td>{{ $item->jenjang }}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('pemira.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
+                                                    <a href="{{ route('jurusan.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Jurusan">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <form action="{{ route('pemira.destroy', $item->id) }}" method="POST" class="inline-block">
+                                                    <form action="{{ route('jurusan.destroy', $item->id) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
                                                         <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
                                                             <!-- onclick="return initDemos('.alert_demo_7')"    -->

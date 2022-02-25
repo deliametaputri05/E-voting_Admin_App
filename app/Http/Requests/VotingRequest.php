@@ -26,6 +26,7 @@ class VotingRequest extends FormRequest
 
         return [
 
+            'id_pemira' => 'required|exists:pemira,id',
             'id_kandidat' => 'required|exists:kandidat,id',
             'jumlah_suara' => 'required|integer',
             'status' => 'required|string',

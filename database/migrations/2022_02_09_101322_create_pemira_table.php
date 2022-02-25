@@ -19,9 +19,9 @@ class CreatePemiraTable extends Migration
             $table->string('nama');
             $table->string('foto');
             $table->text('deskripsi');
-            $table->integer('jumlah_suara');
-            $table->dateTime('waktu_mulai');
-            $table->dateTime('waktu_selesai');
+            $table->date('tanggal');
+            $table->time('waktu_mulai');
+            $table->time('waktu_selesai');
 
             $table->softDeletes();
             $table->timestamps();

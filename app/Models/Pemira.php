@@ -15,9 +15,14 @@ class Pemira extends Model
     protected $table = "pemira";
 
     protected $fillable = [
-        'nama', 'foto', 'deskripsi', 'jumlah_suara', 'waktu_mulai', 'waktu_selesai'
+        'id_ormawa', 'nama', 'foto', 'deskripsi', 'tanggal', 'waktu_mulai', 'waktu_selesai'
 
     ];
+
+    public function ormawa()
+    {
+        return $this->hasOne(Ormawa::class, 'id', 'id_ormawa');
+    }
 
     public function getCreatedAtAttribute($created_at)
     {
@@ -34,11 +39,11 @@ class Pemira extends Model
     public function toArray()
     {
         $toArray = parent::toArray();
-        $toArray['foto'] = $this->logo;
+        $toArray['foto'] = $this->foto;
         return $toArray;
     }
 
-    public function getPicturePathAttribute()
+    public function getFotoAttribute()
     {
         return config('app.url') . Storage::url($this->attributes['foto']);
     }

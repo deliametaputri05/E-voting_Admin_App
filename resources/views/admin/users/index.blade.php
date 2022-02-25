@@ -104,21 +104,21 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody>                                       
+                                    <tbody>
                                         @forelse ($user as $item)
                                         <tr>
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td class="align-items-center"><br> <div class="avatar avatar-xl">
-                                                <img src="{{ $item->profile_photo_url }}" alt="..." class="avatar-img rounded-circle">
-                                            </div><br><br></td>
+                                            <td class="align-items-center"><br>
+                                                <div class="avatar avatar-xl">
+                                                    <img src="{{ $item->profile_photo_url }}" alt="..." class="avatar-img rounded-circle">
+                                                </div><br><br>
+                                            </td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->roles }}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('education.show', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Show Education">
-                                                        <i class="fa fa-graduation-cap"></i>
-                                                    </a>
+
                                                     <a href="{{ route('users.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>
                                                     </a>

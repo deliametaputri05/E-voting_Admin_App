@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\Http\Requests\PemiraRequest;
 use App\Models\Pemira;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Ormawa;
 
 class PemiraController extends Controller
 {
@@ -16,9 +16,7 @@ class PemiraController extends Controller
      */
     public function index()
     {
-        $pemira = Pemira::paginate();
-
-        // dd($ormawa);
+        $pemira = Pemira::with(['ormawa'])->paginate();
 
         return view('admin.pemira.index', [
             'pemira' => $pemira
@@ -32,7 +30,8 @@ class PemiraController extends Controller
      */
     public function create()
     {
-        return view('admin.pemira.create');
+        $ormawa = Ormawa::all();
+        return view('admin.pemira.create', compact('ormawa'));
     }
 
     /**
@@ -71,8 +70,10 @@ class PemiraController extends Controller
      */
     public function edit(Pemira $pemira)
     {
+        $ormawa = Ormawa::all();
         return view('admin.pemira.edit', [
-            'item' => $pemira
+            'item' => $pemira,
+            'ormawa' => $ormawa
         ]);
     }
 

@@ -7,7 +7,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Create Mahasiwa</h4>
+                <h4 class="page-title">Create Jurusan</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Mahasiswa</a>
+                        <a href="#">Jurusan</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         @endif
-                        <form class="w-full" action="{{ route('mahasiswa.store') }}" method="post" enctype="multipart/form-data">
+                        <form class="w-full" action="{{ route('jurusan.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row">
@@ -62,39 +62,26 @@
 
                                                 <div class="col-md-6 col-lg-8">
                                                     <div class="form-group">
-                                                        <label for="nim">NIM</label>
-                                                        <input type="text" class="form-control" id="nim" name="nim" value="{{ old('nim') }}" placeholder="Nomor Induk Mahasiswa">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="nama">Nama</label>
-                                                        <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}" placeholder="Nama Mahasiswa">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="foto">Foto</label>
-                                                        <input type="file" class="form-control-file" id="foto" name="foto" placeholder="Foto Kegiatan">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="id_jurusan">Jurusan</label>
-                                                        <select class="form-control" id="id_jurusan" name="id_jurusan">
+                                                        <label for="nama">Nama Jurusan</label>
+                                                        <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}" placeholder="Nama Jurusan">
 
-                                                            <option value=null>--- Pilih Jurusan ---</option>
-                                                            @foreach ($jurusan as $jsn)
-                                                            <option value="{{ $jsn->id }}">{{ $jsn->jenjang }} {{ $jsn->nama }}</option>
-                                                            @endforeach
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="jenjang">Jenjang</label>
+                                                        <select class="form-control" id="jenjang" name="jenjang">
+
+                                                            <option value=null>--- Pilih Jenjang ---</option>
+
+                                                            <option value="D3">D3</option>
+                                                            <option value="D4">D4</option>
+
                                                         </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="angkatan">Angkatan</label>
-                                                        <input type="text" class="form-control" id="angkatan" name="angkatan" value="{{ old('angkatan') }}" placeholder="Angkatan ">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="kelas">Kelas</label>
-                                                        <input type="text" class="form-control" id="kelas" name="kelas" value="{{ old('kelas') }}" placeholder="Kelas ">
                                                     </div>
 
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_5">Submit</button>
-                                                        <a href="/dashboard/mahasiswa" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/jurusan" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

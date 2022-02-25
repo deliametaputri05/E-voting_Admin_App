@@ -62,18 +62,7 @@
             <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
 
                 <div class="container-fluid">
-                    <div class="collapse" id="search-nav">
-                        <form class="navbar-left navbar-form nav-search mr-md-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <button type="submit" class="btn btn-search pr-1">
-                                        <i class="fa fa-search search-icon"></i>
-                                    </button>
-                                </div>
-                                <input type="text" placeholder="Search ..." class="form-control">
-                            </div>
-                        </form>
-                    </div>
+
                     <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                         <li class="nav-item toggle-nav-search hidden-caret">
                             <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
@@ -145,10 +134,7 @@
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             this.closest('form').submit();">Logout</a>
 
-                                            <!-- <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                                                {{ __('Logout') }}
-                                            </x-jet-dropdown-link> -->
+
                                         </form>
                                     </li>
                                 </div>
@@ -215,23 +201,7 @@
                             </span>
                             <h4 class="text-section">Menu</h4>
                         </li>
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#kegiatan">
 
-                                <i class="fas fa-calendar-check"></i>
-                                <p>Pemira</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="kegiatan">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="/dashboard/pemira">
-                                            <span class="sub-item">Data Pemira</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#ormawa">
                                 <i class="fas fa-sitemap"></i>
@@ -249,6 +219,24 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#kegiatan">
+
+                                <i class="fas fa-calendar-check"></i>
+                                <p>Pemira</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="kegiatan">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="/dashboard/pemira">
+                                            <span class="sub-item">Data Pemira</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#mpm">
 
@@ -447,12 +435,12 @@
                             <div class="collapse" id="mahasiswa">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="#mahasiswa">
+                                        <a href="/dashboard/jurusan">
                                             <span class="sub-item">Jurusan</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#mahasiswa">
+                                        <a href="/dashboard/mahasiswa">
                                             <span class="sub-item">Data Mahasiswa</span>
                                         </a>
                                     </li>
@@ -468,7 +456,7 @@
                             <div class="collapse" id="admin">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="#admin">
+                                        <a href="/dashboard/users">
                                             <span class="sub-item">Data Admin</span>
                                         </a>
                                     </li>
@@ -583,7 +571,7 @@
     <script src="/assets/js/plugin/datatables/datatables.min.js"></script>
 
     <!-- Bootstrap Notify -->
-    {{-- <script src="/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> --}}
+    <!-- <script src="/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> -->
 
     <!-- jQuery Vector Maps -->
     <script src="/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>

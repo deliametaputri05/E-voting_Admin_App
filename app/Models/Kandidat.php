@@ -9,14 +9,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
 
-class CalonKetua extends Model
+class Kandidat extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $table = "calon_ketua";
+    protected $table = "kandidat";
 
     protected $fillable = [
-        'id_jurusan', 'id_ormawa', 'nim', 'nama', 'angkatan', 'kelas', 'foto',
-        'alamat', 'waktu_memilih', 'sudah_vote', 'moto'
+        'id_clnKetua', 'id_clnWakil', 'id_pemira', 'id_ormawa', 'no_urut', 'foto', 'visi', 'misi'
+
 
     ];
 

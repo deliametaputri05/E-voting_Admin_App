@@ -38,7 +38,7 @@ class Ormawa extends Model
         return $toArray;
     }
 
-    public function getPicturePathAttribute()
+    public function getLogoAttribute()
     {
         return config('app.url') . Storage::url($this->attributes['logo']);
     }

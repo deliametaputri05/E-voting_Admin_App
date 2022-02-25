@@ -29,10 +29,10 @@ class PemiraRequest extends FormRequest
             'id_ormawa' => 'required|exists:ormawa,id',
             'nama' => 'required|string',
             'foto' => 'image',
-            'deskripsi' => 'required|text',
-            'jumlah_suara' => 'required|integer',
-            'waktu_mulai' => 'required|date',
-            'waktu_selesai' => 'required|date',
+            'deskripsi' => 'required',
+            'tanggal' => 'required',
+            'waktu_mulai' => 'required',
+            'waktu_selesai' => 'required',
 
         ];
     }

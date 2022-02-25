@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\Http\Requests\OrmawaRequest;
 use App\Models\Ormawa;
-use Illuminate\Support\Facades\Auth;
+
 
 class OrmawaController extends Controller
 {
@@ -17,8 +17,6 @@ class OrmawaController extends Controller
     public function index()
     {
         $ormawa = Ormawa::paginate();
-
-        // dd($ormawa);
 
         return view('admin.ormawa.index', [
             'ormawa' => $ormawa
