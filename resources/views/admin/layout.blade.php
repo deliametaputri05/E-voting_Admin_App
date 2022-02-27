@@ -252,7 +252,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#mpm">
+                                        <a href="/dashboard/mpm/calonKetua">
                                             <span class="sub-item">Calon Ketua</span>
                                         </a>
                                     </li>

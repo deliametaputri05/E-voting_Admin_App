@@ -11,6 +11,8 @@ use App\Http\Controllers\CalonKetuaController;
 use App\Http\Controllers\CalonWakilController;
 use App\Http\Controllers\KandidatController;
 use App\Http\Controllers\VotingController;
+
+use App\Http\Controllers\MPM\MpmCalonKetuaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +50,7 @@ Route::prefix('dashboard')
         Route::resource('calonWakil', CalonWakilController::class);
         Route::resource('kandidat', KandidatController::class);
         Route::resource('voting', VotingController::class);
+        Route::resource('mpm/calonKetua', MpmCalonKetuaController::class);
 
         // user
         Route::get('user/create', [UserController::class, 'create'])->name('users.create');
@@ -58,4 +61,5 @@ Route::prefix('dashboard')
         Route::get('calonKetua/create', [CalonKetuaController::class, 'create'])->name('calonKetua.create');
         Route::get('calonWakil/create', [CalonWakilController::class, 'create'])->name('calonWakil.create');
         Route::get('kandidat/create', [KandidatController::class, 'create'])->name('kandidat.create');
+        Route::get('mpm/calonKetua/create', [MpmCalonKetuaController::class, 'create'])->name('mpm.calonKetua.create');
     });

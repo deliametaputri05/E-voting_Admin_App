@@ -20,6 +20,16 @@ class CalonKetua extends Model
 
     ];
 
+    public function ormawa()
+    {
+        return $this->hasOne(Ormawa::class, 'id', 'id_ormawa');
+    }
+
+    public function jurusan()
+    {
+        return $this->hasOne(Jurusan::class, 'id', 'id_jurusan');
+    }
+
     public function getCreatedAtAttribute($created_at)
     {
         return Carbon::parse($created_at)

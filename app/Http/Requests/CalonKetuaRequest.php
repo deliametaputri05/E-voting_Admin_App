@@ -27,16 +27,14 @@ class CalonKetuaRequest extends FormRequest
         return [
 
             'id_jurusan' => 'required|exists:jurusan,id',
-            'id_ormawa' => 'required|exists:ormawa,id',
+            'id_ormawa' => 'exists:ormawa,id',
             'nim' => 'required|integer',
             'nama' => 'required|string',
             'angkatan' => 'required|integer',
             'kelas' => 'required|string',
             'foto' => 'image',
-            'alamat' => 'required|text',
-            'waktu_memilih' => 'required|date',
-            'sudah_vote' => 'required|integer',
-            'moto' => 'required|text',
+            'alamat' => 'required',
+            'moto' => 'required',
 
 
         ];
