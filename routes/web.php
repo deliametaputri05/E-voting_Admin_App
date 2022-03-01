@@ -13,6 +13,8 @@ use App\Http\Controllers\KandidatController;
 use App\Http\Controllers\VotingController;
 
 use App\Http\Controllers\MPM\MpmCalonKetuaController;
+use App\Http\Controllers\MPM\MpmCalonWakilController;
+use App\Http\Controllers\MPM\MpmKandidatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,6 +53,8 @@ Route::prefix('dashboard')
         Route::resource('kandidat', KandidatController::class);
         Route::resource('voting', VotingController::class);
         Route::resource('mpm/calonKetua', MpmCalonKetuaController::class);
+        Route::resource('mpm/calonWakil', MpmCalonWakilController::class);
+        Route::resource('mpm/kandidat', MpmKandidatController::class);
 
         // user
         Route::get('user/create', [UserController::class, 'create'])->name('users.create');
@@ -62,4 +66,6 @@ Route::prefix('dashboard')
         Route::get('calonWakil/create', [CalonWakilController::class, 'create'])->name('calonWakil.create');
         Route::get('kandidat/create', [KandidatController::class, 'create'])->name('kandidat.create');
         Route::get('mpm/calonKetua/create', [MpmCalonKetuaController::class, 'create'])->name('mpm.calonKetua.create');
+        Route::get('mpm/calonWakil/create', [MpmCalonWakilController::class, 'create'])->name('mpm.calonWakil.create');
+        Route::get('mpm/kandidat/create', [MpmKandidatController::class, 'create'])->name('mpm.kandidat.create');
     });

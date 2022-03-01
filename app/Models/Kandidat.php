@@ -20,6 +20,28 @@ class Kandidat extends Model
 
     ];
 
+    public function ormawa()
+    {
+        return $this->hasOne(Ormawa::class, 'id', 'id_ormawa');
+    }
+
+    public function pemira()
+    {
+        return $this->hasOne(Pemira::class, 'id', 'id_pemira');
+    }
+
+    public function calonKetua()
+    {
+        return $this->hasOne(CalonKetua::class, 'id', 'id_clnKetua');
+    }
+
+    public function calonWakil()
+    {
+        return $this->hasOne(CalonWakil::class, 'id', 'id_clnWakil');
+    }
+
+
+
     public function getCreatedAtAttribute($created_at)
     {
         return Carbon::parse($created_at)

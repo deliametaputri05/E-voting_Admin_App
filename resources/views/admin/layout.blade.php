@@ -247,7 +247,7 @@
                             <div class="collapse" id="mpm">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="#mpm">
+                                        <a href="/dashboard/mpm/kandidat">
                                             <span class="sub-item">Kandidat</span>
                                         </a>
                                     </li>
@@ -257,7 +257,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#mpm">
+                                        <a href="/dashboard/mpm/calonWakil">
                                             <span class="sub-item">Calon Wakil</span>
                                         </a>
                                     </li>
