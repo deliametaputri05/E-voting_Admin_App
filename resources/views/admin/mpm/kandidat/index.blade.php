@@ -47,7 +47,7 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>No</th>
                                             <th>No urut</th>
                                             <th>Calon Ketua</th>
                                             <th>Calon Wakil</th>
@@ -63,7 +63,7 @@
                                     <tbody>
                                         @forelse ($kandidat as $item)
                                         <tr>
-                                            <td class="text-center">{{ $item->id }}</td>
+                                            <td class="text-center">{{ $kandidat->count() * ($kandidat->currentPage() - 1) + $loop->iteration }</td>
                                             <td>{{ $item->no_urut }}</td>
                                             <td>{{ $item->calonKetua->nama }}</td>
                                             <td>{{ $item->calonWakil->nama }}</td>
@@ -82,10 +82,10 @@
 
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('kandidat.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
+                                                    <a href="{{ route('kandidatMpm.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <form action="{{ route('kandidat.destroy', $item->id) }}" method="POST" class="inline-block">
+                                                    <form action="{{ route('kandidatMpm.destroy', $item->id) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
                                                         <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
                                                             <!-- onclick="return initDemos('.alert_demo_7')"    -->

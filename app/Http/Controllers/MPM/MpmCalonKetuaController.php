@@ -51,7 +51,7 @@ class MpmCalonKetuaController extends Controller
 
         CalonKetua::create($data);
 
-        return redirect()->route('calonKetua.index');
+        return redirect()->route('calonKetuaMpm.index');
     }
 
     /**
@@ -99,7 +99,7 @@ class MpmCalonKetuaController extends Controller
 
         $calonKetua->update($data);
 
-        return redirect()->route('calonKetua.index');
+        return redirect()->route('calonKetuaMpm.index');
     }
 
     /**
@@ -112,6 +112,6 @@ class MpmCalonKetuaController extends Controller
     {
         $calonKetua->delete();
 
-        return redirect()->route('mpm.calonKetua.index');
+        return redirect()->route('calonKetuaMpm.index');
     }
 }

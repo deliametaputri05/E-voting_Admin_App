@@ -51,7 +51,7 @@ class MpmCalonWakilController extends Controller
 
         CalonWakil::create($data);
 
-        return redirect()->route('calonWakil.index');
+        return redirect()->route('calonWakilMpm.index');
     }
 
     /**
@@ -99,7 +99,7 @@ class MpmCalonWakilController extends Controller
 
         $calonWakil->update($data);
 
-        return redirect()->route('calonWakil.index');
+        return redirect()->route('calonWakilMpm.index');
     }
 
     /**
@@ -112,6 +112,6 @@ class MpmCalonWakilController extends Controller
     {
         $calonWakil->delete();
 
-        return redirect()->route('mpm.calonWakil.index');
+        return redirect()->route('calonWakilMpm.index');
     }
 }

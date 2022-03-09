@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         @endif
-                        <form class="w-full" action="{{ route('kandidat.store') }}" method="post" enctype="multipart/form-data">
+                        <form class="w-full" action="{{ route('kandidatMpm.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row">
@@ -103,7 +103,7 @@
 
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_5">Submit</button>
-                                                        <a href="/dashboard/mpm/kandidat" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/mpm/kandidatMpm" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

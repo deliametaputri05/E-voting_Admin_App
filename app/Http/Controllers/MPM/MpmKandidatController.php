@@ -52,11 +52,11 @@ class MpmKandidatController extends Controller
 
         $data['id_ormawa'] = 1;
         $data['id_pemira'] = 1;
-        $data['foto'] = $request->file('foto')->store('assets/mpm/Kandidat', 'public');
+        $data['foto'] = $request->file('foto')->store('assets/mpm/kandidat', 'public');
 
         Kandidat::create($data);
 
-        return redirect()->route('kandidat.index');
+        return redirect()->route('kandidatMpm.index');
     }
 
     /**
@@ -99,14 +99,14 @@ class MpmKandidatController extends Controller
         $data = $request->all();
 
         if ($request->file('foto')) {
-            $data['foto'] = $request->file('foto')->store('assets/mpm/calonWakil', 'public');
+            $data['foto'] = $request->file('foto')->store('assets/mpm/kandidat', 'public');
         }
         if ($request->file(null)) {
         }
 
         $kandidat->update($data);
 
-        return redirect()->route('kandidat.index');
+        return redirect()->route('kandidatMpm.index');
     }
 
     /**
@@ -119,6 +119,6 @@ class MpmKandidatController extends Controller
     {
         $kandidat->delete();
 
-        return redirect()->route('mpm.kandidat.index');
+        return redirect()->route('kandidatMpm.index');
     }
 }

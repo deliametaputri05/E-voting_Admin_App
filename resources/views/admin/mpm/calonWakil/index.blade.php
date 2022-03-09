@@ -47,7 +47,7 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>No</th>
                                             <th>NIM</th>
                                             <th>Nama</th>
                                             <th>Foto</th>
@@ -62,7 +62,7 @@
                                     <tbody>
                                         @forelse ($calonWakil as $item)
                                         <tr>
-                                            <td class="text-center">{{ $item->id }}</td>
+                                            <td class="text-center">{{ $calonWakil->count() * ($calonWakil->currentPage() - 1) + $loop->iteration }}</td>
                                             <td>{{ $item->nim }}</td>
                                             <td>{{ $item->nama }}</td>
                                             <td>
@@ -80,10 +80,10 @@
 
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('calonWakil.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
+                                                    <a href="{{ route('calonWakilMpm.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <form action="{{ route('calonWakil.destroy', $item->id) }}" method="POST" class="inline-block">
+                                                    <form action="{{ route('calonWakilMpm.destroy', $item->id) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
                                                         <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
                                                             <!-- onclick="return initDemos('.alert_demo_7')"    -->

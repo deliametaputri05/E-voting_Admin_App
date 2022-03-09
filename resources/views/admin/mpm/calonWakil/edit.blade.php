@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         @endif
-                        <form class="w-full" action="{{ route('calonWakil.update', $item->id) }}" method="post" enctype="multipart/form-data">
+                        <form class="w-full" action="{{ route('calonWakilMpm.update', $item->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('put')
 
@@ -109,7 +109,7 @@
 
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_5">Submit</button>
-                                                        <a href="/dashboard/mpm/calonWakil" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/mpm/calonWakilMpm" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

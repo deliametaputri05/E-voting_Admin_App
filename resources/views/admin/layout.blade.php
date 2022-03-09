@@ -246,23 +246,24 @@
                             </a>
                             <div class="collapse" id="mpm">
                                 <ul class="nav nav-collapse">
+
                                     <li>
-                                        <a href="/dashboard/mpm/kandidat">
-                                            <span class="sub-item">Kandidat</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/dashboard/mpm/calonKetua">
+                                        <a href="/dashboard/mpm/calonKetuaMpm">
                                             <span class="sub-item">Calon Ketua</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/dashboard/mpm/calonWakil">
+                                        <a href="/dashboard/mpm/calonWakilMpm">
                                             <span class="sub-item">Calon Wakil</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#mpm">
+                                        <a href="/dashboard/mpm/kandidatMpm">
+                                            <span class="sub-item">Kandidat</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/mpm/votingMpm">
                                             <span class="sub-item">Hasil Suara</span>
                                         </a>
                                     </li>
@@ -279,23 +280,24 @@
                             </a>
                             <div class="collapse" id="bem">
                                 <ul class="nav nav-collapse">
+
                                     <li>
-                                        <a href="#bem">
-                                            <span class="sub-item">Kandidat</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#bem">
+                                        <a href="/dashboard/bem/calonKetuaBem">
                                             <span class="sub-item">Calon Ketua</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#bem">
+                                        <a href="/dashboard/bem/calonWakilBem">
                                             <span class="sub-item">Calon Wakil</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#bem">
+                                        <a href="/dashboard/bem/kandidatBem">
+                                            <span class="sub-item">Kandidat</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/bem/votingBem">
                                             <span class="sub-item">Hasil Suara</span>
                                         </a>
                                     </li>
@@ -311,23 +313,24 @@
                             </a>
                             <div class="collapse" id="himatif">
                                 <ul class="nav nav-collapse">
+
                                     <li>
-                                        <a href="#himatif">
-                                            <span class="sub-item">Kandidat</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#himatif">
+                                        <a href="/dashboard/himatif/calonKetuaHimatif">
                                             <span class="sub-item">Calon Ketua</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#himatif">
+                                        <a href="/dashboard/himatif/calonWakilHimatif">
                                             <span class="sub-item">Calon Wakil</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#himatif">
+                                        <a href="/dashboard/himatif/kandidatHimatif">
+                                            <span class="sub-item">Kandidat</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/himatif/votingHimatif">
                                             <span class="sub-item">Hasil Suara</span>
                                         </a>
                                     </li>
@@ -345,18 +348,17 @@
                             <div class="collapse" id="hmm">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="#hmm">
+                                        <a href="/dashboard/hmm/calonKetuaHmm">
+                                            <span class="sub-item">Calon Ketua</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/hmm/kandidatHmm">
                                             <span class="sub-item">Kandidat</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#hmm">
-                                            <span class="sub-item">Calon Ketua</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#hmm">
+                                        <a href="/dashboard/hmm/votingHmm">
                                             <span class="sub-item">Hasil Suara</span>
                                         </a>
                                     </li>
@@ -374,18 +376,17 @@
                             <div class="collapse" id="himra">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="#himra">
+                                        <a href="/dashboard/himra/calonKetuaHimra">
+                                            <span class="sub-item">Calon Ketua</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/himra/kandidatHimra">
                                             <span class="sub-item">Kandidat</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#himra">
-                                            <span class="sub-item">Calon Ketua</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#himra">
+                                        <a href="/dashboard/himra/votingHimra">
                                             <span class="sub-item">Hasil Suara</span>
                                         </a>
                                     </li>
@@ -402,23 +403,24 @@
                             </a>
                             <div class="collapse" id="himakes">
                                 <ul class="nav nav-collapse">
+
                                     <li>
-                                        <a href="#himakes">
-                                            <span class="sub-item">Kandidat</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#himakes">
+                                        <a href="/dashboard/himakes/calonKetuaHimakes">
                                             <span class="sub-item">Calon Ketua</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#himakes">
+                                        <a href="/dashboard/himakes/calonWakilHimakes">
                                             <span class="sub-item">Calon Wakil</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#himakes">
+                                        <a href="/dashboard/himakes/kandidatHimakes">
+                                            <span class="sub-item">Kandidat</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/himakes/votingHimakes">
                                             <span class="sub-item">Hasil Suara</span>
                                         </a>
                                     </li>
