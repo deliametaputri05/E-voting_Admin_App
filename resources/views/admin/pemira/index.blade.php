@@ -47,7 +47,7 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>No</th>
                                             <th>Nama</th>
                                             <th>Foto</th>
                                             <!-- <th>Deskripsi</th> -->
@@ -62,7 +62,7 @@
                                     <tbody>
                                         @forelse ($pemira as $item)
                                         <tr>
-                                            <td class="text-center">{{ $item->id }}</td>
+                                            <td class="text-center">{{ $pemira->count() * ($pemira->currentPage() - 1) + $loop->iteration }}</td>
                                             <td>{{ $item->nama }}</td>
                                             <td>
                                                 <br>

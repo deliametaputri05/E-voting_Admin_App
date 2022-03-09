@@ -62,7 +62,7 @@
                                     <tbody>
                                         @forelse ($calonKetua as $item)
                                         <tr>
-                                            <td class="text-center">{{ $calonKetua->count() * ($calonKetua->currentPage() - 1) + $loop->iteration }</td>
+                                            <td class="text-center">{{ $calonKetua->count() * ($calonKetua->currentPage() - 1) + $loop->iteration }}</td>
                                             <td>{{ $item->nim }}</td>
                                             <td>{{ $item->nama }}</td>
                                             <td>

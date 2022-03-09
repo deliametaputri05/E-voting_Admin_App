@@ -47,7 +47,7 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>No</th>
                                             <th>Nama</th>
                                             <th>Jenjang</th>
                                             <th>Aksi</th>
@@ -58,7 +58,7 @@
                                     <tbody>
                                         @forelse ($jurusan as $item)
                                         <tr>
-                                            <td class="text-center">{{ $item->id }}</td>
+                                            <td class="text-center">{{ $jurusan->count() * ($jurusan->currentPage() - 1) + $loop->iteration }}</td>
                                             <td>{{ $item->nama }}</td>
                                             <td>{{ $item->jenjang }}</td>
                                             <td>

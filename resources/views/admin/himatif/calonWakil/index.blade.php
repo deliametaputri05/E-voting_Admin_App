@@ -62,7 +62,7 @@
                                     <tbody>
                                         @forelse ($calonWakil as $item)
                                         <tr>
-                                            <td class="text-center">{{ $calonWakil->count() * ($calonWakil->currentPage() - 1) + $loop->iteration }</td>
+                                            <td class="text-center">{{ $calonWakil->count() * ($calonWakil->currentPage() - 1) + $loop->iteration }}</td>
                                             <td>{{ $item->nim }}</td>
                                             <td>{{ $item->nama }}</td>
                                             <td>

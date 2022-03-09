@@ -63,7 +63,7 @@
                                     <tbody>
                                         @forelse ($kandidat as $item)
                                         <tr>
-                                            <td class="text-center">{{ $kandidat->count() * ($kandidat->currentPage() - 1) + $loop->iteration }</td>
+                                            <td class="text-center">{{ $kandidat->count() * ($kandidat->currentPage() - 1) + $loop->iteration }}</td>
                                             <td>{{ $item->no_urut }}</td>
                                             <td>{{ $item->calonKetua->nama }}</td>
                                             <td>{{ $item->calonWakil->nama }}</td>
