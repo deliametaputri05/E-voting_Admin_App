@@ -84,7 +84,7 @@ class OrmawaController extends Controller
     public function update(OrmawaRequest $request, Ormawa $ormawa)
     {
         $data = $request->all();
-
+        // dd($data);
         if ($request->file('logo')) {
             $data['logo'] = $request->file('logo')->store('assets/ormawa', 'public');
         }
@@ -92,6 +92,7 @@ class OrmawaController extends Controller
         }
 
         $ormawa->update($data);
+        // dd($request);
 
         return redirect()->route('ormawa.index');
     }

@@ -51,7 +51,7 @@ class MpmCalonKetuaController extends Controller
 
         CalonKetua::create($data);
 
-        return redirect()->route('calonKetuaMpm.index');
+        return redirect()->route('mpmCalonKetua.index');
     }
 
     /**
@@ -71,12 +71,19 @@ class MpmCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CalonKetua $calonKetua)
+    public function edit($id)
     {
+        // dd($id);
+        $item = CalonKetua::findOrFail($id);
         $jurusan = Jurusan::all();
+
+        // dd($calonKetua);
+
         return view('admin.mpm.calonKetua.edit', [
-            'item' => $calonKetua,
-            'jurusan' => $jurusan
+            'id' => $id,
+            'jurusan' => $jurusan,
+            'item' => $item,
+
         ]);
     }
 
@@ -87,9 +94,12 @@ class MpmCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CalonKetuaRequest $request, CalonKetua $calonKetua)
+    public function update(CalonKetuaRequest $request, $id)
     {
         $data = $request->all();
+        $calonKetua = CalonKetua::findOrFail($id);
+        // dd($request);
+
 
         if ($request->file('foto')) {
             $data['foto'] = $request->file('foto')->store('assets/mpm/calonKetua', 'public');
@@ -97,9 +107,10 @@ class MpmCalonKetuaController extends Controller
         if ($request->file(null)) {
         }
 
+        // dd($data);
         $calonKetua->update($data);
 
-        return redirect()->route('calonKetuaMpm.index');
+        return redirect()->route('mpmCalonKetua.index');
     }
 
     /**
@@ -108,10 +119,12 @@ class MpmCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CalonKetua $calonKetua)
-    {
-        $calonKetua->delete();
 
-        return redirect()->route('calonKetuaMpm.index');
+    public function destroy($id)
+    {
+        $item = CalonKetua::findOrFail($id);
+        $item->delete();
+
+        return redirect()->route('mpmCalonKetua.index');
     }
 }

@@ -54,7 +54,7 @@ class HmmKandidatController extends Controller
 
         Kandidat::create($data);
 
-        return redirect()->route('kandidatHmm.index');
+        return redirect()->route('hmmKandidat.index');
     }
 
     /**
@@ -74,10 +74,12 @@ class HmmKandidatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kandidat $kandidat)
+    public function edit($id)
     {
+        $kandidat = Kandidat::findOrFail($id);
         $calonKetua = CalonKetua::where('id_ormawa', '=', 4);
         return view('admin.hmm.kandidat.edit', [
+            'id' => $id,
             'item' => $kandidat,
             'calonKetua' => $calonKetua,
 
@@ -91,9 +93,10 @@ class HmmKandidatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(KandidatRequest $request, Kandidat $kandidat)
+    public function update(KandidatRequest $request, $id)
     {
         $data = $request->all();
+        $kandidat = Kandidat::findOrFail($id);
 
         if ($request->file('foto')) {
             $data['foto'] = $request->file('foto')->store('assets/hmm/kandidat', 'public');
@@ -103,7 +106,7 @@ class HmmKandidatController extends Controller
 
         $kandidat->update($data);
 
-        return redirect()->route('kandidatHmm.index');
+        return redirect()->route('hmmKandidat.index');
     }
 
     /**
@@ -112,10 +115,11 @@ class HmmKandidatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kandidat $kandidat)
+    public function destroy($id)
     {
+        $kandidat = Kandidat::findOrFail($id);
         $kandidat->delete();
 
-        return redirect()->route('kandidatHmm.index');
+        return redirect()->route('hmmKandidat.index');
     }
 }

@@ -56,7 +56,7 @@ class HimakesKandidatController extends Controller
 
         Kandidat::create($data);
 
-        return redirect()->route('kandidatHimakes.index');
+        return redirect()->route('himakesKandidat.index');
     }
 
     /**
@@ -76,11 +76,13 @@ class HimakesKandidatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kandidat $kandidat)
+    public function edit($id)
     {
+        $kandidat = Kandidat::findOrFail($id);
         $calonKetua = CalonKetua::where('id_ormawa', '=', 6);
         $calonWakil = CalonWakil::where('id_ormawa', '=', 6);
         return view('admin.himakes.kandidat.edit', [
+            'id' => $id,
             'item' => $kandidat,
             'calonKetua' => $calonKetua,
             'calonWakil' => $calonWakil
@@ -94,9 +96,10 @@ class HimakesKandidatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(KandidatRequest $request, Kandidat $kandidat)
+    public function update(KandidatRequest $request, $id)
     {
         $data = $request->all();
+        $kandidat = Kandidat::findOrFail($id);
 
         if ($request->file('foto')) {
             $data['foto'] = $request->file('foto')->store('assets/himakes/kandidat', 'public');
@@ -106,7 +109,7 @@ class HimakesKandidatController extends Controller
 
         $kandidat->update($data);
 
-        return redirect()->route('kandidatHimakes.index');
+        return redirect()->route('himakesKandidat.index');
     }
 
     /**
@@ -115,10 +118,11 @@ class HimakesKandidatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kandidat $kandidat)
+    public function destroy($id)
     {
+        $kandidat = Kandidat::findOrFail($id);
         $kandidat->delete();
 
-        return redirect()->route('kandidatHimakes.index');
+        return redirect()->route('himakesKandidat.index');
     }
 }

@@ -10,7 +10,7 @@
                 <h4 class="page-title">Edit Kandidat</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Kandidat</a>
+                        <a href="/dashboard/mpmKandidat">Kandidat</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         @endif
-                        <form class="w-full" action="{{ route('kandidatMpm.update', $item->id) }}" method="post" enctype="multipart/form-data">
+                        <form class="w-full" action="{{ route('mpmKandidat.update', $id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('put')
 
@@ -104,7 +104,7 @@
                                                     </div>
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_5">Submit</button>
-                                                        <a href="/dashboard/mpm/kandidatMpm" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/mpmCalonWakil" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

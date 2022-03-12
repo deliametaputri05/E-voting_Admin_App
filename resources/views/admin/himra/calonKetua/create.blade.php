@@ -10,7 +10,7 @@
                 <h4 class="page-title">Create Calon Ketua</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Calon Ketua</a>
+                        <a href="/dashboard/himraCalonKetua">Calon Ketua</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         @endif
-                        <form class="w-full" action="{{ route('calonKetuaHimra.store') }}" method="post" enctype="multipart/form-data">
+                        <form class="w-full" action="{{ route('himraCalonKetua.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row">
@@ -104,7 +104,7 @@
 
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_5">Submit</button>
-                                                        <a href="/dashboard/himra/calonKetuaHimra" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/himraCalonKetua" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

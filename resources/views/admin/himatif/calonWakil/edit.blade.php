@@ -10,7 +10,7 @@
                 <h4 class="page-title">Edit Calon Wakil</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Calon Wakil</a>
+                        <a href="/dashboard/himatifCalonWakil">Calon Wakil</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         @endif
-                        <form class="w-full" action="{{ route('calonWakilHimatif.update', $item->id) }}" method="post" enctype="multipart/form-data">
+                        <form class="w-full" action="{{ route('himatifCalonWakil.update', $id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('put')
 
@@ -109,7 +109,7 @@
 
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_5">Submit</button>
-                                                        <a href="/dashboard/himatif/calonWakilHimatif" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/himatifCalonWakil" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

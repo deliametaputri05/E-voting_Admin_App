@@ -10,7 +10,7 @@
                 <h4 class="page-title">Calon Wakil HIMAKES</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Calon Wakil</a>
+                        <a href="/dashboard/himakesCalonWakil">Calon Wakil</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -80,10 +80,10 @@
 
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('calonWakilHimakes.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
+                                                    <a href="{{ route('himakesCalonWakil.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <form action="{{ route('calonWakilHimakes.destroy', $item->id) }}" method="POST" class="inline-block">
+                                                    <form action="{{ route('himakesCalonWakil.destroy', $item->id) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
                                                         <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
                                                             <!-- onclick="return initDemos('.alert_demo_7')"    -->

@@ -51,7 +51,7 @@ class BemCalonWakilController extends Controller
 
         CalonWakil::create($data);
 
-        return redirect()->route('calonWakilBem.index');
+        return redirect()->route('bemCalonWakil.index');
     }
 
     /**
@@ -71,12 +71,14 @@ class BemCalonWakilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CalonWakil $calonWakil)
+    public function edit($id)
     {
+        $item = CalonWakil::findOrFail($id);
         $jurusan = Jurusan::all();
         return view('admin.bem.calonWakil.edit', [
-            'item' => $calonWakil,
-            'jurusan' => $jurusan
+            'id' => $id,
+            'jurusan' => $jurusan,
+            'item' => $item,
         ]);
     }
 
@@ -87,9 +89,10 @@ class BemCalonWakilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CalonWakilRequest $request, CalonWakil $calonWakil)
+    public function update(CalonWakilRequest $request, $id)
     {
         $data = $request->all();
+        $calonWakil = CalonWakil::findOrFail($id);
 
         if ($request->file('foto')) {
             $data['foto'] = $request->file('foto')->store('assets/bem/calonWakil', 'public');
@@ -99,7 +102,7 @@ class BemCalonWakilController extends Controller
 
         $calonWakil->update($data);
 
-        return redirect()->route('calonWakilBem.index');
+        return redirect()->route('bemCalonWakil.index');
     }
 
     /**
@@ -108,10 +111,11 @@ class BemCalonWakilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CalonWakil $calonWakil)
+    public function destroy($id)
     {
-        $calonWakil->delete();
+        $item = CalonWakil::findOrFail($id);
+        $item->delete();
 
-        return redirect()->route('bem.calonWakil.index');
+        return redirect()->route('bemCalonWakil.index');
     }
 }

@@ -66,32 +66,32 @@ Route::prefix('dashboard')
         Route::resource('mahasiswa', MahasiswaController::class);
 
         // mpm
-        Route::resource('mpm/calonKetuaMpm', MpmCalonKetuaController::class);
-        Route::resource('mpm/calonWakilMpm', MpmCalonWakilController::class);
-        Route::resource('mpm/kandidatMpm', MpmKandidatController::class);
+        Route::resource('mpmCalonKetua', MpmCalonKetuaController::class);
+        Route::resource('mpmCalonWakil', MpmCalonWakilController::class);
+        Route::resource('mpmKandidat', MpmKandidatController::class);
 
         // bem
-        Route::resource('bem/calonKetuaBem', BemCalonKetuaController::class);
-        Route::resource('bem/calonWakilBem', BemCalonWakilController::class);
-        Route::resource('bem/kandidatBem', BemKandidatController::class);
+        Route::resource('bemCalonKetua', BemCalonKetuaController::class);
+        Route::resource('bemCalonWakil', BemCalonWakilController::class);
+        Route::resource('bemKandidat', BemKandidatController::class);
 
         // himatif
-        Route::resource('himatif/calonKetuaHimatif', HimatifCalonKetuaController::class);
-        Route::resource('himatif/calonWakilHimatif', HimatifCalonWakilController::class);
-        Route::resource('himatif/kandidatHimatif', HimatifKandidatController::class);
+        Route::resource('himatifCalonKetua', HimatifCalonKetuaController::class);
+        Route::resource('himatifCalonWakil', HimatifCalonWakilController::class);
+        Route::resource('himatifKandidat', HimatifKandidatController::class);
 
         // hmm
-        Route::resource('hmm/calonKetuaHmm', HmmCalonKetuaController::class);
-        Route::resource('hmm/kandidatHmm', HmmKandidatController::class);
+        Route::resource('hmmCalonKetua', HmmCalonKetuaController::class);
+        Route::resource('hmmKandidat', HmmKandidatController::class);
 
         // himra
-        Route::resource('himra/calonKetuaHimra', HimraCalonKetuaController::class);
-        Route::resource('himra/kandidatHimra', HimraKandidatController::class);
+        Route::resource('himraCalonKetua', HimraCalonKetuaController::class);
+        Route::resource('himraKandidat', HimraKandidatController::class);
 
         // himakes
-        Route::resource('himakes/calonKetuaHimakes', HimakesCalonKetuaController::class);
-        Route::resource('himakes/calonWakilHimakes', HimakesCalonWakilController::class);
-        Route::resource('himakes/kandidatHimakes', HimakesKandidatController::class);
+        Route::resource('himakesCalonKetua', HimakesCalonKetuaController::class);
+        Route::resource('himakesCalonWakil', HimakesCalonWakilController::class);
+        Route::resource('himakesKandidat', HimakesKandidatController::class);
 
 
 
@@ -103,7 +103,6 @@ Route::prefix('dashboard')
         Route::get('mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
 
         Route::get('mpm/calonKetua/create', [MpmCalonKetuaController::class, 'create'])->name('mpm.calonKetua.create');
-        Route::get('mpm/calonKetua/edit{id}', [MpmCalonKetuaController::class, 'edit'])->name('mpm.calonKetua.edit');
         Route::get('mpm/calonWakil/create', [MpmCalonWakilController::class, 'create'])->name('mpm.calonWakil.create');
         Route::get('mpm/kandidat/create', [MpmKandidatController::class, 'create'])->name('mpm.kandidat.create');
 

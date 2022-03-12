@@ -51,7 +51,7 @@ class HmmCalonKetuaController extends Controller
 
         CalonKetua::create($data);
 
-        return redirect()->route('calonKetuaHmm.index');
+        return redirect()->route('hmmCalonKetua.index');
     }
 
     /**
@@ -71,12 +71,14 @@ class HmmCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CalonKetua $calonKetua)
+    public function edit($id)
     {
+        $item = CalonKetua::findOrFail($id);
         $jurusan = Jurusan::all();
         return view('admin.hmm.calonKetua.edit', [
-            'item' => $calonKetua,
-            'jurusan' => $jurusan
+            'id' => $id,
+            'jurusan' => $jurusan,
+            'item' => $item,
         ]);
     }
 
@@ -87,9 +89,10 @@ class HmmCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CalonKetuaRequest $request, CalonKetua $calonKetua)
+    public function update(CalonKetuaRequest $request, $id)
     {
         $data = $request->all();
+        $calonKetua = CalonKetua::findOrFail($id);
 
         if ($request->file('foto')) {
             $data['foto'] = $request->file('foto')->store('assets/hmm/calonKetua', 'public');
@@ -99,7 +102,7 @@ class HmmCalonKetuaController extends Controller
 
         $calonKetua->update($data);
 
-        return redirect()->route('calonKetuaHmm.index');
+        return redirect()->route('hmmCalonKetua.index');
     }
 
     /**
@@ -108,10 +111,11 @@ class HmmCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CalonKetua $calonKetua)
+    public function destroy($id)
     {
-        $calonKetua->delete();
+        $item = CalonKetua::findOrFail($id);
+        $item->delete();
 
-        return redirect()->route('calonKetuaHmm.index');
+        return redirect()->route('hmmCalonKetua.index');
     }
 }

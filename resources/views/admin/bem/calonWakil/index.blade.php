@@ -80,10 +80,10 @@
 
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('calonWakilBem.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
+                                                    <a href="{{ route('bemCalonWakil.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <form action="{{ route('calonWakilBem.destroy', $item->id) }}" method="POST" class="inline-block">
+                                                    <form action="{{ route('bemCalonWakil.destroy', $item->id) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
                                                         <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
                                                             <!-- onclick="return initDemos('.alert_demo_7')"    -->

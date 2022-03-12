@@ -19,6 +19,16 @@ class Voting extends Model
 
     ];
 
+    public function kandidat()
+    {
+        return $this->hasOne(Ormawa::class, 'id', 'id_kandidat');
+    }
+
+    public function pemira()
+    {
+        return $this->hasOne(Pemira::class, 'id', 'id_pemira');
+    }
+
     public function getCreatedAtAttribute($created_at)
     {
         return Carbon::parse($created_at)

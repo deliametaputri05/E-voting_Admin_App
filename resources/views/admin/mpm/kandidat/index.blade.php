@@ -10,7 +10,7 @@
                 <h4 class="page-title">Kandidat MPM</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -82,10 +82,10 @@
 
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('kandidatMpm.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
+                                                    <a href="{{ route('mpmKandidat.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <form action="{{ route('kandidatMpm.destroy', $item->id) }}" method="POST" class="inline-block">
+                                                    <form action="{{ route('mpmKandidat.destroy', $item) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
                                                         <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
                                                             <!-- onclick="return initDemos('.alert_demo_7')"    -->

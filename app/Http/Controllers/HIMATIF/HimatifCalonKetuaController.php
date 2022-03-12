@@ -51,7 +51,7 @@ class HimatifCalonKetuaController extends Controller
 
         CalonKetua::create($data);
 
-        return redirect()->route('calonKetuaHimatif.index');
+        return redirect()->route('himatifCalonKetua.index');
     }
 
     /**
@@ -71,12 +71,14 @@ class HimatifCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CalonKetua $calonKetua)
+    public function edit($id)
     {
+        $item = CalonKetua::findOrFail($id);
         $jurusan = Jurusan::all();
         return view('admin.himatif.calonKetua.edit', [
-            'item' => $calonKetua,
-            'jurusan' => $jurusan
+            'id' => $id,
+            'jurusan' => $jurusan,
+            'item' => $item,
         ]);
     }
 
@@ -87,9 +89,10 @@ class HimatifCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CalonKetuaRequest $request, CalonKetua $calonKetua)
+    public function update(CalonKetuaRequest $request, $id)
     {
         $data = $request->all();
+        $calonKetua = CalonKetua::findOrFail($id);
 
         if ($request->file('foto')) {
             $data['foto'] = $request->file('foto')->store('assets/himatif/calonKetua', 'public');
@@ -99,7 +102,7 @@ class HimatifCalonKetuaController extends Controller
 
         $calonKetua->update($data);
 
-        return redirect()->route('calonKetuaHimatif.index');
+        return redirect()->route('himatifCalonKetua.index');
     }
 
     /**
@@ -108,10 +111,11 @@ class HimatifCalonKetuaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CalonKetua $calonKetua)
+    public function destroy($id)
     {
-        $calonKetua->delete();
+        $item = CalonKetua::findOrFail($id);
+        $item->delete();
 
-        return redirect()->route('calonKetuaHimatif.index');
+        return redirect()->route('himatifCalonKetua.index');
     }
 }
