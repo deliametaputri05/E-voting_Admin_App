@@ -32,7 +32,7 @@ class HimatifCalonKetuaController extends Controller
     public function create()
     {
         $ormawa = Ormawa::all();
-        $jurusan = Jurusan::all();
+        $jurusan = Jurusan::all()->where('id_ormawa', '=', 3);
         return view('admin.himatif.calonKetua.create', compact('ormawa', 'jurusan'));
     }
 

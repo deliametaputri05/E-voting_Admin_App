@@ -2,6 +2,14 @@
 
 
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\JurusanController;
+use App\Http\Controllers\API\OrmawaController;
+use App\Http\Controllers\API\PemiraController;
+use App\Http\Controllers\API\CalonKetuaController;
+use App\Http\Controllers\API\CalonWakilController;
+use App\Http\Controllers\API\KandidatController;
+use App\Http\Controllers\API\MahasiswaController;
+use App\Http\Controllers\API\VotingController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +34,12 @@ Route::post('login', [UserController::class, 'login']);
 
 Route::post('register', [UserController::class, 'register']);
 Route::post('signup', [UserController::class, 'signup']);
+
+Route::get('jurusan', [JurusanController::class, 'all']);
+Route::get('ormawa', [OrmawaController::class, 'all']);
+Route::get('pemira', [PemiraController::class, 'all']);
+Route::get('calonKetua', [CalonKetuaController::class, 'all']);
+Route::get('calonWakil', [CalonWakilController::class, 'all']);
+Route::get('kandidat', [KandidatController::class, 'all']);
+Route::get('mahasiswa', [MahasiswaController::class, 'all']);
+Route::get('voting', [VotingController::class, 'all']);
