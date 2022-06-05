@@ -23,6 +23,7 @@ class CreateKandidatTable extends Migration
             $table->text('foto');
             $table->text('visi');
             $table->text('misi');
+            $table->integer('jhasil_suara');
 
             $table->softDeletes();
             $table->timestamps();

@@ -1,0 +1,173 @@
+<!-- Store this code in 'register.html' file inside the 'templates' folder -->
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Register Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='ext/images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ext/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ext/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ext/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ext/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ext/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ext/css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ext/css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="{{ url_for('static', filename='ext/images/img-01.png') }}" alt="IMG">
+				</div>
+				<div class="login100-form">
+					<form action="{{ url_for('register') }}" method="POST">
+						<span class="login100-form-title">
+							Register Page
+						</span>
+						{% if (messager == 1 ) %}
+						<div class="alert alert-danger" role="alert">
+							Masukan Username
+						</div>
+						{% endif %}
+						{% if (messager == 2 ) %}
+						<div class="alert alert-danger" role="alert">
+							Masukan Password
+						</div>
+						{% endif %}
+						{% if (messager == 3 ) %}
+						<div class="alert alert-danger" role="alert">
+							Kolom Password dan Konfirm Password tidak Sama
+						</div>
+						{% endif %}
+						{% if (messager == 4 ) %}
+						<div class="alert alert-danger" role="alert">
+							Masukan Konfirm Password
+						</div>
+						{% endif %}
+						{% if (messager == 5 ) %}
+						<div class="alert alert-danger" role="alert">
+							Username telah Digunakan
+						</div>
+						{% endif %}
+						{% if (messager == 6 ) %}
+						<div class="alert alert-danger" role="alert">
+							Masukan Kode User
+						</div>
+						{% endif %}
+						{% if (messager == 7 ) %}
+						<div class="alert alert-danger" role="alert">
+							Kode User telah Digunakan
+						</div>
+						{% endif %}
+						{% if (messager == 8 ) %}
+						<div class="alert alert-danger" role="alert">
+							Masukan Nama
+						</div>
+						{% endif %}
+
+						<div class="wrap-input100 validate-input">
+							<input class="input100" type="text" name="name" id="name" placeholder="Nama">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-address-card" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<div class="wrap-input100 validate-input">
+							<input class="input100" type="text" name="kduser" id="kduser" placeholder="Kode User">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-id-badge" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<div class="wrap-input100 validate-input">
+							<input class="input100" type="text" name="username" id="username" placeholder="Username">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-user-o" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<div class="wrap-input100 validate-input" data-validate = "Password is required">
+							<input class="input100" type="password" name="password" id="password" placeholder="Password">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<div class="wrap-input100 validate-input" data-validate = "Password is required">
+							<input class="input100" type="password" name="confirmation" id="confirmation" placeholder="Konfirm Password">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+							</span>
+						</div>
+						
+						<div class="container-login100-form-btn">
+							<button type="submit" class="btn btn-success btn-block">Sign Up</button>
+						</div>
+					</form>
+
+					<div class="container-login100-form-btn">
+						<a class="btn btn-primary btn-block" href="{{url_for('login')}}" role="button" >
+							Back to Login
+						</a>
+					</div>
+
+					<div class="text-center p-t-86">
+						<a class="txt2" href="https://github.com/renol767">
+							Created By renol767
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="{{ url_for('static', filename='ext/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='ext/vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ url_for('static', filename='ext/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='ext/vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='ext/vendor/tilt/tilt.jquery.min.js') }}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('#kduser').keyup(function(){
+				$(this).val($(this).val().toUpperCase());
+			});
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='ext/js/main.js') }}"></script>
+
+</body>
+</html>
+

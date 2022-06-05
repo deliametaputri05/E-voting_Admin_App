@@ -54,4 +54,28 @@ class KandidatController extends Controller
             'Data list Kandidat berhasil diambil'
         );
     }
+
+    public function show($id_pemira)
+    {
+        $kandidat = Kandidat::where('id_pemira', $id_pemira)->get();
+
+
+        // if ($kandidat) {
+        //     return response()->json([
+        //         'success' => true,
+        //         'message' => "Detail kandidat $kandidat!",
+        //         'data'    => $kandidat
+        //     ], 200);
+        // } else {
+        //     return response()->json([
+        //         'success' => false,
+        //         'message' => 'Post Tidak Ditemukan!',
+        //         'data'    => ''
+        //     ], 401);
+        // }
+        return ResponseFormatter::success(
+            $kandidat,
+            'Data list Kandidat berhasil diambil'
+        );
+    }
 }

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\MahasiswaRequest;
 use App\Models\Mahasiswa;
 use App\Models\Jurusan;
+use Illuminate\Support\Facades\Storage;
 
 class MahasiswaController extends Controller
 {
@@ -42,12 +43,15 @@ class MahasiswaController extends Controller
      */
     public function store(MahasiswaRequest $request)
     {
-        $data = $request->all();
 
-        $data['foto'] = $request->file('foto')->store('assets/mahasiswa', 'public');
+        $data = $request->all();
+        $filename = $data['nim'];
+        // dd($data['nim']);
+
+        $data['foto'] = $request->file('foto')->storeAs('public/static/face', $filename . '.jpg');
+
 
         Mahasiswa::create($data);
-
         return redirect()->route('mahasiswa.index');
     }
 
@@ -87,9 +91,10 @@ class MahasiswaController extends Controller
     public function update(MahasiswaRequest $request, Mahasiswa $mahasiswa)
     {
         $data = $request->all();
+        $filename = $data['nim'];
 
         if ($request->file('foto')) {
-            $data['foto'] = $request->file('foto')->store('assets/mahasiswa', 'public');
+            $data['foto'] = $request->file('foto')->storeAs('public/static/face', $filename . '.jpg');
         }
         if ($request->file(null)) {
         }
@@ -108,6 +113,7 @@ class MahasiswaController extends Controller
     public function destroy(Mahasiswa $mahasiswa)
     {
         $mahasiswa->delete();
+        Storage::delete('public/static/face/' . $mahasiswa->nim . '.jpg');
 
         return redirect()->route('mahasiswa.index');
     }

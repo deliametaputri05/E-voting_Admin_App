@@ -50,7 +50,7 @@ return [
 
     'email' => 'email',
 
-    'g-recaptcha-response' => 'required|captcha',
+    'g-recaptcha-response' => 'required|',
 
     /*
     |--------------------------------------------------------------------------

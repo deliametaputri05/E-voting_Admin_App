@@ -15,8 +15,9 @@ class CreateVotingTable extends Migration
     {
         Schema::create('voting', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_mhs');
+            $table->integer('id_pemira');
             $table->integer('id_kandidat');
-            $table->integer('jumlah_suara');
             $table->string('status');
 
             $table->softDeletes();

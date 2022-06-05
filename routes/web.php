@@ -11,25 +11,30 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MPM\MpmCalonKetuaController;
 use App\Http\Controllers\MPM\MpmCalonWakilController;
 use App\Http\Controllers\MPM\MpmKandidatController;
+use App\Http\Controllers\MPM\MpmVotingController;
 
 use App\Http\Controllers\BEM\BemCalonKetuaController;
 use App\Http\Controllers\BEM\BemCalonWakilController;
 use App\Http\Controllers\BEM\BemKandidatController;
+use App\Http\Controllers\BEM\BemVotingController;
 
 use App\Http\Controllers\HIMATIF\HimatifCalonKetuaController;
 use App\Http\Controllers\HIMATIF\HimatifCalonWakilController;
 use App\Http\Controllers\HIMATIF\HimatifKandidatController;
+use App\Http\Controllers\HIMATIF\HimatifVotingController;
 
 use App\Http\Controllers\HMM\HmmCalonKetuaController;
 use App\Http\Controllers\HMM\HmmKandidatController;
+use App\Http\Controllers\HMM\HmmVotingController;
 
 use App\Http\Controllers\HIMRA\HimraCalonKetuaController;
 use App\Http\Controllers\HIMRA\HimraKandidatController;
+use App\Http\Controllers\HIMRA\HimraVotingController;
 
 use App\Http\Controllers\HIMAKES\HimakesCalonKetuaController;
 use App\Http\Controllers\HIMAKES\HimakesCalonWakilController;
 use App\Http\Controllers\HIMAKES\HimakesKandidatController;
-
+use App\Http\Controllers\HIMAKES\HimakesVotingController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -69,30 +74,35 @@ Route::prefix('dashboard')
         Route::resource('mpmCalonKetua', MpmCalonKetuaController::class);
         Route::resource('mpmCalonWakil', MpmCalonWakilController::class);
         Route::resource('mpmKandidat', MpmKandidatController::class);
+        Route::resource('mpmVoting', MpmVotingController::class);
 
         // bem
         Route::resource('bemCalonKetua', BemCalonKetuaController::class);
         Route::resource('bemCalonWakil', BemCalonWakilController::class);
         Route::resource('bemKandidat', BemKandidatController::class);
+        Route::resource('bemVoting', BemVotingController::class);
 
         // himatif
         Route::resource('himatifCalonKetua', HimatifCalonKetuaController::class);
         Route::resource('himatifCalonWakil', HimatifCalonWakilController::class);
         Route::resource('himatifKandidat', HimatifKandidatController::class);
+        Route::resource('himatifVoting', HimatifVotingController::class);
 
         // hmm
         Route::resource('hmmCalonKetua', HmmCalonKetuaController::class);
         Route::resource('hmmKandidat', HmmKandidatController::class);
+        Route::resource('hmmVoting', HmmVotingController::class);
 
         // himra
         Route::resource('himraCalonKetua', HimraCalonKetuaController::class);
         Route::resource('himraKandidat', HimraKandidatController::class);
+        Route::resource('himraVoting', HimraVotingController::class);
 
         // himakes
         Route::resource('himakesCalonKetua', HimakesCalonKetuaController::class);
         Route::resource('himakesCalonWakil', HimakesCalonWakilController::class);
         Route::resource('himakesKandidat', HimakesKandidatController::class);
-
+        Route::resource('himakesVoting', HimakesVotingController::class);
 
 
         // user
@@ -105,22 +115,28 @@ Route::prefix('dashboard')
         Route::get('mpm/calonKetua/create', [MpmCalonKetuaController::class, 'create'])->name('mpm.calonKetua.create');
         Route::get('mpm/calonWakil/create', [MpmCalonWakilController::class, 'create'])->name('mpm.calonWakil.create');
         Route::get('mpm/kandidat/create', [MpmKandidatController::class, 'create'])->name('mpm.kandidat.create');
+        Route::get('mpm/voting/cetak', [MpmVotingController::class, 'cetak'])->name('mpm.voting.cetak');
 
         Route::get('bem/calonKetua/create', [BemCalonKetuaController::class, 'create'])->name('bem.calonKetua.create');
         Route::get('bem/calonWakil/create', [BemCalonWakilController::class, 'create'])->name('bem.calonWakil.create');
         Route::get('bem/kandidat/create', [BemKandidatController::class, 'create'])->name('bem.kandidat.create');
+        Route::get('bem/voting/cetak', [BemVotingController::class, 'cetak'])->name('bem.voting.cetak');
 
         Route::get('himatif/calonKetua/create', [HimatifCalonKetuaController::class, 'create'])->name('himatif.calonKetua.create');
         Route::get('himatif/calonWakil/create', [HimatifCalonWakilController::class, 'create'])->name('himatif.calonWakil.create');
         Route::get('himatif/kandidat/create', [HimatifKandidatController::class, 'create'])->name('himatif.kandidat.create');
+        Route::get('himatif/voting/cetak', [HimatifVotingController::class, 'cetak'])->name('himatif.voting.cetak');
 
         Route::get('hmm/calonKetua/create', [HmmCalonKetuaController::class, 'create'])->name('hmm.calonKetua.create');
         Route::get('hmm/kandidat/create', [HmmKandidatController::class, 'create'])->name('hmm.kandidat.create');
+        Route::get('hmm/voting/cetak', [HmmVotingController::class, 'cetak'])->name('hmm.voting.cetak');
 
         Route::get('himra/calonKetua/create', [HimraCalonKetuaController::class, 'create'])->name('himra.calonKetua.create');
         Route::get('himra/kandidat/create', [HimraKandidatController::class, 'create'])->name('himra.kandidat.create');
+        Route::get('himra/voting/cetak', [HimraVotingController::class, 'cetak'])->name('himra.voting.cetak');
 
         Route::get('himakes/calonKetua/create', [HimakesCalonKetuaController::class, 'create'])->name('himakes.calonKetua.create');
         Route::get('himakes/calonWakil/create', [HimakesCalonWakilController::class, 'create'])->name('himakes.calonWakil.create');
         Route::get('himakes/kandidat/create', [HimakesKandidatController::class, 'create'])->name('himakes.kandidat.create');
+        Route::get('himakes/voting/cetak', [HimakesVotingController::class, 'cetak'])->name('himakes.voting.cetak');
     });
