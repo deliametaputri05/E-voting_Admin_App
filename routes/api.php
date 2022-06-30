@@ -28,19 +28,17 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [UserController::class, 'fetch']);
     Route::get('jurusan', [JurusanController::class, 'all']);
-
-    Route::get('calonKetua', [CalonKetuaController::class, 'all']);
-    Route::get('calonWakil', [CalonWakilController::class, 'all']);
-
-    Route::get('mahasiswa', [MahasiswaController::class, 'all']);
-    Route::get('voting', [VotingController::class, 'all']);
 });
 
-Route::get('kandidat/{request?}', [KandidatController::class, 'all']);
-Route::get('kandidats/{id_pemira?}', [KandidatController::class, 'show']);
+Route::get('mahasiswa', [MahasiswaController::class, 'all']);
+Route::get('calonKetua', [CalonKetuaController::class, 'all']);
+Route::get('calonWakil', [CalonWakilController::class, 'all']);
+Route::get('kandidat', [KandidatController::class, 'all']);
+Route::get('kandidats/{id_pemira}', [KandidatController::class, 'show']);
 Route::get('ormawa', [OrmawaController::class, 'all']);
 Route::get('pemira', [PemiraController::class, 'all']);
-
+Route::post('voting', [VotingController::class, 'vote']);
+Route::get('voting', [VotingController::class, 'all']);
 Route::post('login', [UserController::class, 'login']);
 
 Route::post('register', [UserController::class, 'register']);

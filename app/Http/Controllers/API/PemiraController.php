@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
+use App\Models\Jurusan;
 use App\Models\Pemira;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,6 @@ class PemiraController extends Controller
     public function all(Request $request)
     {
         $id = $request->input('id');
-        $id_ormawa = $request->input('id_ormawa');
-        $nama = $request->input('nama');
 
         if ($id) {
             $pemira = Pemira::find($id);
@@ -32,15 +31,24 @@ class PemiraController extends Controller
                 );
             }
         }
-
-        $pemira = Pemira::with(['ormawa'])->get();
-
-        if ($nama) {
-            $pemira->where('nama', 'like', '%' . $nama . '%');
+        $allJurusan = Jurusan::all();
+        $allJurusanID = [];
+        foreach ($allJurusan as $item) {
+            $allJurusanID[] = $item['id_ormawa'];
         }
-        if ($id_ormawa) {
-            $pemira->where('id_ormawa', $id_ormawa);
+        // dd($allJurusanID);
+
+        // dd($pemira);
+        $jurusan = Jurusan::where('id', $request->id_jurusan)->get();
+        $arrayWhere = [];
+        foreach ($jurusan as $item) {
+            $arrayWhere[] = $item['id_ormawa'];
         }
+
+        // dd($arrayWhere); 
+        // $pemira = Pemira::with(['ormawa'])->get();
+        $pemira = Pemira::with(['ormawa'])->orWhereNotIn('id_ormawa', $allJurusanID)->orWhereIn('id_ormawa', $arrayWhere)->get();
+
 
         return ResponseFormatter::success(
             $pemira,

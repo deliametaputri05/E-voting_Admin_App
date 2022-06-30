@@ -16,7 +16,7 @@ class Mahasiswa extends Model
 
     protected $fillable = [
         'id_jurusan', 'nim', 'nama', 'angkatan', 'kelas', 'foto',
-        'waktu_memilih', 'sudah_vote'
+        'sudah_vote'
 
     ];
 
