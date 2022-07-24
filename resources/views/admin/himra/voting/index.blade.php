@@ -35,7 +35,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title"></h4>
-                                <a href="/dashboard/himra/voting/cetak" class="btn btn-primary btn-round ml-auto">
+                                <a href="/dashboard/himra/voting/cetak" target="blank" class="btn btn-primary btn-round ml-auto">
                                     <i class="fas fa-print"></i>
                                     Cetak
                                 </a>
