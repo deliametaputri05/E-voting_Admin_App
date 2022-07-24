@@ -70,7 +70,7 @@
                                 <p class="card-text">{{ $knd->calonWakil->nama}}</p>
                             </div>
                             <div class="card-footer">
-                                <h5 class="card-title">{{ $knd->hasil_suara}} suara</h5>
+                                <h5 class="card-title">{{ $knd->jumlah_suara}} suara</h5>
                             </div>
                         </div>
                     </div>

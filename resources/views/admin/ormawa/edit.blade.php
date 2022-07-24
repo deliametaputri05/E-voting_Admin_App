@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Ormawa</a>
+                        <a href="/dashboard/ormawa">Ormawa</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -70,8 +70,13 @@
 
                                                 <div class="col-md-6 col-lg-8">
                                                     <div class="form-group">
-                                                        <label for="name">Nama Ormawa</label>
+                                                        <label for="nama">Nama Ormawa</label>
                                                         <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') ?? $item->nama }}" placeholder="Nama Ormawa">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="label">Label Ormawa</label>
+                                                        <input type="text" class="form-control" id="label" name="label" value="{{ old('label') ?? $item->label }}" placeholder="Label Ormawa">
 
                                                     </div>
                                                     <div class="form-group">
@@ -86,7 +91,7 @@
 
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_6">Update</button>
-                                                        <a href="/dashboard/job" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/ormawa" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

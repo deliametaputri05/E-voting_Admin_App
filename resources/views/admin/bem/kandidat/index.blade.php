@@ -7,7 +7,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Kandidat BEM</h4>
+                <h4 class="page-title">Badan Eksekutif Mahasiswa</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/">
@@ -52,8 +52,6 @@
                                             <th>Calon Ketua</th>
                                             <th>Calon Wakil</th>
                                             <th>Foto</th>
-                                            <th>Visi</th>
-                                            <th>Misi</th>
                                             <th>Aksi</th>
 
 
@@ -77,17 +75,16 @@
                                                 <br>
                                             </td>
 
-                                            <td>{{ $item->visi }}</td>
-                                            <td>{{ $item->misi }}</td>
+
 
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('bemKandidat.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
+                                                    <a href="{{ route('bemKandidat.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Data">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                     <form action="{{ route('bemKandidat.destroy', $item->id) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
-                                                        <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
+                                                        <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Hapus Data">
                                                             <!-- onclick="return initDemos('.alert_demo_7')"    -->
                                                             <i class="fa fa-times"></i>
                                                         </button>

@@ -52,6 +52,7 @@ class MpmKandidatController extends Controller
 
         $data['id_ormawa'] = 1;
         $data['id_pemira'] = 1;
+        $data['jumlah_suara'] = 0;
         $data['foto'] = $request->file('foto')->store('assets/mpm/kandidat', 'public');
 
         Kandidat::create($data);

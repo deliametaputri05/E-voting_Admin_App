@@ -17,6 +17,7 @@ class CreateVotingTable extends Migration
             $table->id();
             $table->integer('id_mhs');
             $table->integer('id_pemira');
+            $table->integer('id_ormawa');
             $table->integer('id_kandidat');
             $table->string('status');
 

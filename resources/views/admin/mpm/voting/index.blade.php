@@ -1,13 +1,13 @@
 @extends('../admin.layout')
 
-@section('title', 'Data Kandidat')
+@section('title', 'Hasil Voting')
 
 @section('container')
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Majelis Permusyawatan Mahasiswa</h4>
+                <h4 class="page-title">Majelis Permusyawaratan Mahasiswa</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/">
@@ -35,7 +35,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title"></h4>
-                                <a href="/dashboard/mpm/voting/cetak" class="btn btn-primary btn-round ml-auto">
+                                <a href="/dashboard/mpm/voting/cetak" target="blank" class="btn btn-primary btn-round ml-auto">
                                     <i class="fas fa-print"></i>
                                     Cetak
                                 </a>
@@ -68,15 +68,16 @@
                                             <td class="text-center">{{ $item->calonWakil->nama }}</td>
                                             <td class="">
                                                 <br>
-                                                <div class="avatar avatar-xl ">
-                                                    <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
-
-                                                </div>
+                                                <center>
+                                                    <div class="avatar avatar-xl ">
+                                                        <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
+                                                    </div>
+                                                </center>
                                                 <br>
                                                 <br>
                                             </td>
 
-                                            <td class="text-center">{{ $item->hasil_suara }}</td>
+                                            <td class="text-center">{{ $item->jumlah_suara }}</td>
 
 
                                         </tr>

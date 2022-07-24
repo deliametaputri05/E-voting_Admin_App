@@ -27,7 +27,8 @@ class OrmawaRequest extends FormRequest
         return [
 
             'nama' => 'required|string',
-            'logo' => 'image',
+            'logo' => 'required|image',
+            'label' => 'required|string'
 
         ];
     }

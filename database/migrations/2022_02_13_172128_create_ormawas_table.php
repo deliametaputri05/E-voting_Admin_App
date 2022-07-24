@@ -16,6 +16,7 @@ class CreateOrmawasTable extends Migration
         Schema::create('ormawa', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('label');
             $table->text('logo');
             $table->softDeletes();
             $table->timestamps();

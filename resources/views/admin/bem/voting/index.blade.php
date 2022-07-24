@@ -7,7 +7,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Majelis Permusyawatan Mahasiswa</h4>
+                <h4 class="page-title">Badan Eksekutif Mahasiswa</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/">
@@ -35,7 +35,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title"></h4>
-                                <a href="/dashboard/bem/voting/cetak" class="btn btn-primary btn-round ml-auto">
+                                <a href="/dashboard/bem/voting/cetak" target="blank" class="btn btn-primary btn-round ml-auto">
                                     <i class="fas fa-print"></i>
                                     Cetak
                                 </a>
@@ -76,7 +76,7 @@
                                                 <br>
                                             </td>
 
-                                            <td class="text-center">{{ $item->hasil_suara }}</td>
+                                            <td class="text-center">{{ $item->jumlah_suara }}</td>
 
 
                                         </tr>

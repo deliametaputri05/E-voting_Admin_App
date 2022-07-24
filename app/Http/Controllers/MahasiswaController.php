@@ -17,7 +17,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswa = Mahasiswa::with(['jurusan'])->paginate();
+        $mahasiswa = Mahasiswa::with(['jurusan'])->paginate(100);
 
         return view('admin.mahasiswa.index', [
             'mahasiswa' => $mahasiswa
@@ -49,6 +49,7 @@ class MahasiswaController extends Controller
         // dd($data['nim']);
 
         $data['foto'] = $request->file('foto')->storeAs('public/static/face', $filename . '.jpg');
+        $data['sudah_vote'] = 0;
 
 
         Mahasiswa::create($data);

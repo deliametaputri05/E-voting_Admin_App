@@ -70,7 +70,7 @@
                                 <p class="card-text">{{ $knd->calonWakil->nama}}</p>
                             </div>
                             <div class="card-footer">
-                                <h5 class="card-title">{{ $knd->hasil_suara}} suara</h5>
+                                <h5 class="card-title">{{ $knd->jumlah_suara}} suara</h5>
                             </div>
                         </div>
                     </div>
@@ -81,12 +81,42 @@
                 </div>
                 <br>
                 <h3>Total suara masuk: {{$jumlah}}</h3>
+                <br>
+                <h3>SELAMAT KEPADA KETUA DAN WAKIL KETUA TERPILIH</h3>
+                <br>
                 @foreach ($data as $dt)
-                <div>
-                    <h3>Ketua Terpilih: {{$dt->calonKetua->nama}}</h3>
-                    <h3>Wakil Ketua Terpilih: {{$dt->calonWakil->nama}}</h3>
+
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 mb-3 ">
+
+                        <div class="card">
+                            <h5 class="card-header">Ketua Terpilih</h5>
+                            <img src="{{ $dt->calonKetua->foto }}" class="card-img-top" alt="gambar">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $dt->calonKetua->nama}}</h4>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4 mb-3 ">
+
+                        <div class="card">
+                            <h5 class="card-header">Wakil Ketua Terpilih</h5>
+                            <img src="{{ $dt->calonWakil->foto }}" class="card-img-top" alt="gambar">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $dt->calonWakil->nama}}</h4>
+
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
+
                 @endforeach
+
             </div>
 
 
@@ -96,8 +126,8 @@
 
 </body>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     window.print()
-</script> -->
+</script>
 
 </html>

@@ -7,7 +7,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">User JogjaKarir</h4>
+                <h4 class="page-title">Admin</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">User</a>
+                        <a href="#">Admin</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -37,7 +37,7 @@
                                 <h4 class="card-title"></h4>
                                 <a href="/dashboard/user/create" class="btn btn-primary btn-round ml-auto">
                                     <i class="fa fa-plus"></i>
-                                    Add User
+                                    Add Admin
                                 </a>
                             </div>
                         </div>

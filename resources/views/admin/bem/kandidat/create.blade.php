@@ -1,13 +1,13 @@
 @extends('../admin.layout')
 
-@section('title', 'Create')
+@section('title', 'Create Kandidat')
 
 @section('container')
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Create Kandidat</h4>
+                <h4 class="page-title">BEM</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/">

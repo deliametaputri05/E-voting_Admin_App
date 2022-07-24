@@ -7,10 +7,10 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Create Pemira</h4>
+                <h4 class="page-title">Form Pemira</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Pemira</a>
+                        <a href="/dashboard/pemira">Pemira</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>

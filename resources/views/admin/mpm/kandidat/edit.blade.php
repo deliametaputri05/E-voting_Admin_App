@@ -7,7 +7,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Edit Kandidat</h4>
+                <h4 class="page-title">MPM</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/">
@@ -96,15 +96,15 @@
 
                                                     <div class="form-group">
                                                         <label for="visi">Visi </label>
-                                                        <textarea class="form-control" value="{{ old('visi') ?? $item->visi }}" name="visi" id="desc" rows="3" placeholder="visi">{{ $item->visi }}</textarea>
+                                                        <textarea class="form-control" value="{{ old('visi') ?? $item->visi }}" name="visi" id="desc" rows="5" placeholder="visi">{{ $item->visi }}</textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="misi">Misi </label>
-                                                        <textarea class="form-control" value="{{ old('misi') ?? $item->misi }}" name="misi" id="desc" rows="3" placeholder="misi">{{ $item->misi }}</textarea>
+                                                        <textarea class="form-control" value="{{ old('misi') ?? $item->misi }}" name="misi" id="desc" rows="10" placeholder="misi">{{ $item->misi }}</textarea>
                                                     </div>
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_5">Submit</button>
-                                                        <a href="/dashboard/mpmCalonWakil" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/mpmKandidat" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

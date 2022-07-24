@@ -33,10 +33,7 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
-            <div class="block mt-4">
-                {!! NoCaptcha::display() !!}
-                {!! NoCaptcha::renderJs() !!}
-            </div>
+            <!-- captcha -->
 
 
             <div class="flex items-center justify-end mt-4">

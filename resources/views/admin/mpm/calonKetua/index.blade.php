@@ -82,12 +82,12 @@
                                             <td>
 
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('mpmCalonKetua.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit pemira">
+                                                    <a href="{{ route('mpmCalonKetua.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Data">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                     <form action="{{ route('mpmCalonKetua.destroy', $item->id) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
-                                                        <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
+                                                        <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Hapus Data">
 
                                                             <i class="fa fa-times"></i>
                                                         </button>

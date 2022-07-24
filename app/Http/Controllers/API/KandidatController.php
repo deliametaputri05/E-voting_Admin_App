@@ -55,9 +55,9 @@ class KandidatController extends Controller
         );
     }
 
-    public function show($id_pemira)
+    public function show($id_ormawa)
     {
-        $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_pemira', $id_pemira)->get();
+        $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa', $id_ormawa)->get();
 
 
         // if ($kandidat) {

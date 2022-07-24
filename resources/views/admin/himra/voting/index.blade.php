@@ -75,7 +75,7 @@
                                                 <br>
                                             </td>
 
-                                            <td class="text-center">{{ $item->hasil_suara }}</td>
+                                            <td class="text-center">{{ $item->jumlah_suara }}</td>
 
 
                                         </tr>

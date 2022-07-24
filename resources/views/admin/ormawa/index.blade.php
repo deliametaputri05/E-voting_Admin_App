@@ -10,7 +10,7 @@
                 <h4 class="page-title">Ormawa</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -18,7 +18,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Ormawa</a>
+                        <a href="/dashboard/ormawa">Ormawa</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -49,6 +49,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
+                                            <th>Label</th>
                                             <th>Logo</th>
                                             <th>Aksi</th>
 
@@ -60,6 +61,7 @@
                                         <tr>
                                             <td class="text-center">{{ $ormawa->count() * ($ormawa->currentPage() - 1) + $loop->iteration }}</td>
                                             <td>{{ $item->nama }}</td>
+                                            <td>{{ $item->label }}</td>
                                             <td>
                                                 <br>
                                                 <div class="avatar avatar-xl ">
@@ -71,12 +73,12 @@
                                             </td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('ormawa.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Ormawa">
+                                                    <a href="{{ route('ormawa.edit', $item->id) }}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Data">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                     <form action="{{ route('ormawa.destroy', $item->id) }}" method="POST" class="inline-block">
                                                         {!! method_field('delete') . csrf_field() !!}
-                                                        <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Remove">
+                                                        <button type="submit" data-toggle="tooltip" title="" class="btn btn-link btn-danger alert_demo_7" data-original-title="Hapus Data">
                                                             <!-- onclick="return initDemos('.alert_demo_7')"    -->
                                                             <i class="fa fa-times"></i>
                                                         </button>

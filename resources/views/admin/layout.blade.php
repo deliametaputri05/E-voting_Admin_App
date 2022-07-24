@@ -175,7 +175,7 @@
                             <a data-toggle="collapse" aria-expanded="true">
                                 <span>
                                     {{ Auth::user()->name }}
-                                    <span class="user-level">Administrator</span>
+                                    <span class="user-level">Panitia Pemira</span>
                                     <!-- <span class="caret"></span> -->
                                 </span>
                             </a>
@@ -203,38 +203,22 @@
                         </li>
 
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#ormawa">
+                            <a href="/dashboard/ormawa">
                                 <i class="fas fa-sitemap"></i>
 
                                 <p>Ormawa</p>
-                                <span class="caret"></span>
+
                             </a>
-                            <div class="collapse" id="ormawa">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="/dashboard/ormawa">
-                                            <span class="sub-item">Data Ormawa</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+
                         </li>
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#kegiatan">
+                            <a href="/dashboard/pemira">
 
                                 <i class="fas fa-calendar-check"></i>
                                 <p>Pemira</p>
-                                <span class="caret"></span>
+
                             </a>
-                            <div class="collapse" id="kegiatan">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="/dashboard/pemira">
-                                            <span class="sub-item">Data Pemira</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+
                         </li>
 
                         <li class="nav-item">
@@ -451,20 +435,12 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#admin">
+                            <a href="/dashboard/users">
                                 <i class="fas fa-id-card"></i>
                                 <p>Admin</p>
-                                <span class="caret"></span>
+
                             </a>
-                            <div class="collapse" id="admin">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="/dashboard/users">
-                                            <span class="sub-item">Data Admin</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+
 
                         </li>
 
@@ -542,9 +518,7 @@
                     </div>
                 </div>
             </div>
-            <div class="custom-toggle">
-                <i class="flaticon-settings"></i>
-            </div>
+
         </div>
         <!-- End Custom template -->
     </div>
@@ -586,9 +560,8 @@
     <!-- Atlantis JS -->
     <script src="/assets/js/atlantis.min.js"></script>
 
-    <!-- Atlantis DEMO methods, don't include it in your project! -->
+
     <script src="/assets/js/setting-demo.js"></script>
-    <!-- Atlantis DEMO methods, don't include it in your project! -->
     <script src="/assets/js/setting-demo2.js"></script>
     <script src="/assets/js/demo.js"></script>
     @yield('script')

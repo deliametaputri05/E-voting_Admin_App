@@ -46,7 +46,7 @@ kandidat = Table(
     Column('foto',String(255)),
     Column('visi',String(255)),
     Column('misi',String(255)),
-    Column('hasil_suara',Integer)
+    Column('jumlah_suara',Integer)
 )
 
 calon_ketua = Table (

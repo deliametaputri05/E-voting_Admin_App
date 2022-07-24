@@ -34,6 +34,7 @@ class KandidatRequest extends FormRequest
             'foto' => 'image',
             'visi' => 'required',
             'misi' => 'required',
+            'jumlah_suara' => 'integer',
 
 
 

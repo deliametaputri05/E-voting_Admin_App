@@ -16,12 +16,13 @@ class CreateMahasiswaTable extends Migration
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_user');
             $table->integer('id_jurusan');
             $table->integer('nim');
+            $table->string('nama');
             $table->string('angkatan');
             $table->string('kelas');
-            $table->integer('total_vote');
+            $table->text('foto');
+            $table->integer('sudah_vote');
 
             $table->softDeletes();
             $table->timestamps();

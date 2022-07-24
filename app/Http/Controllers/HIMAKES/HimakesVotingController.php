@@ -22,9 +22,9 @@ class HimakesVotingController extends Controller
     {
         $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa',  6)->paginate();
         $ormawa = Ormawa::all()->where('id', 6);
-        $jumlah = Kandidat::all()->where('id_ormawa', 6)->sum('hasil_suara');
-        $pemenang = Kandidat::all()->where('id_ormawa', 6)->max('hasil_suara');
-        $data = Kandidat::where('hasil_suara', $pemenang)->get();
+        $jumlah = Kandidat::all()->where('id_ormawa', 6)->sum('jumlah_suara');
+        $pemenang = Kandidat::all()->where('id_ormawa', 6)->max('jumlah_suara');
+        $data = Kandidat::where('jumlah_suara', $pemenang)->get();
         // dd($data);
 
         return view('admin.himakes.voting.cetak', compact('kandidat', 'ormawa', 'jumlah', 'pemenang', 'data'));

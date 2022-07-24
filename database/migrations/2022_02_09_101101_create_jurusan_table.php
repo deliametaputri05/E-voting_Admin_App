@@ -16,6 +16,7 @@ class CreateJurusanTable extends Migration
 
         Schema::create('jurusan', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_ormawa');
             $table->string('nama');
             $table->string('jenjang');
 

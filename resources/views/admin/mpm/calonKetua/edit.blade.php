@@ -7,7 +7,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Edit Calon Ketua</h4>
+                <h4 class="page-title">MPM</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/">

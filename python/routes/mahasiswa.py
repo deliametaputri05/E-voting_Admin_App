@@ -118,7 +118,7 @@ async def faceRecognition(face_image: UploadFile = File(...) ,nim: int = Form(..
             data = {
                 "id": data['id'],
                 "id_jurusan": data['id_jurusan'],
-                "foto": "http://192.168.43.86:8000/storage"+data['foto'][6:],
+                "foto": "http://10.0.115.12:8000/storage"+data['foto'][6:],
                 "nim": data['nim'],
                 "angkatan" : data['angkatan'],
                 "nama": data['nama'],
