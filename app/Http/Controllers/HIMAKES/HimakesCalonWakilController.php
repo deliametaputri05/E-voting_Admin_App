@@ -32,7 +32,7 @@ class HimakesCalonWakilController extends Controller
     public function create()
     {
         $ormawa = Ormawa::all();
-        $jurusan = Jurusan::all();
+        $jurusan = Jurusan::all()->where('id_ormawa', 6);
         return view('admin.himakes.calonWakil.create', compact('ormawa', 'jurusan'));
     }
 
@@ -74,7 +74,7 @@ class HimakesCalonWakilController extends Controller
     public function edit($id)
     {
         $item = CalonWakil::findOrFail($id);
-        $jurusan = Jurusan::all();
+        $jurusan = Jurusan::all()->where('id_ormawa', 6);
         return view('admin.himakes.calonWakil.edit', [
             'id' => $id,
             'jurusan' => $jurusan,

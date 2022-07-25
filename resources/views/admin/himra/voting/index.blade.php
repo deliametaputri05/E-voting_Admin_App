@@ -67,10 +67,12 @@
                                             <td class="text-center">{{ $item->calonWakil->nama }}</td>
                                             <td class="">
                                                 <br>
-                                                <div class="avatar avatar-xl ">
-                                                    <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
+                                                <center>
+                                                    <div class="avatar avatar-xl ">
+                                                        <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
 
-                                                </div>
+                                                    </div>
+                                                </center>
                                                 <br>
                                                 <br>
                                             </td>

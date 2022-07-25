@@ -86,10 +86,19 @@
                                                         </select>
                                                     </div>
 
+                                                    <div class="form-group">
+                                                        <label for="id_ormawa">Ormawa</label>
+                                                        <select class="form-control" id="id_ormawa" name="id_ormawa">
 
+                                                            <option value={{ $item->id_ormawa }}>{{ $item->ormawa->nama }}</option>
+                                                            @foreach ($ormawa as $org)
+                                                            <option value="{{ $org->id }}">{{ $org->jenjang }} {{ $org->nama }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
                                                     <div class="card-action">
                                                         <button type="submit" class="btn btn-primary" id="alert_demo_3_6">Update</button>
-                                                        <a href="/dashboard/job" class="btn btn-danger" on>Cancel</a>
+                                                        <a href="/dashboard/jurusan" class="btn btn-danger" on>Cancel</a>
 
                                                     </div>
 

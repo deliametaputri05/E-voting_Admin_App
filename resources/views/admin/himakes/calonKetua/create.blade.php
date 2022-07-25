@@ -81,6 +81,12 @@
                                                         <label for="kelas">Kelas</label>
                                                         <input type="text" class="form-control" id="kelas" name="kelas" value="{{ old('kelas') }}" placeholder="Kelas">
                                                     </div>
+                                                    <!-- <fieldset disabled>
+                                                        <div class="form-group">
+                                                            <label for="jsn">Jurusan</label>
+                                                            <input type="text" class="form-control" id="jsn" name="kelas" value="D3 Keperawatan" placeholder="Jurusan">
+                                                        </div>
+                                                    </fieldset> -->
 
                                                     <div class="form-group">
                                                         <label for="id_jurusan">Jurusan</label>

@@ -52,8 +52,8 @@
                                             <th>Calon Ketua</th>
                                             <th>Calon Wakil</th>
                                             <th>Foto</th>
-                                            <th>Visi</th>
-                                            <th>Misi</th>
+                                            <!-- <th>Visi</th>
+                                            <th>Misi</th> -->
                                             <th>Aksi</th>
 
 
@@ -69,16 +69,18 @@
                                             <td>{{ $item->calonWakil->nama }}</td>
                                             <td>
                                                 <br>
-                                                <div class="avatar avatar-xl ">
-                                                    <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
+                                                <center>
+                                                    <div class="avatar avatar-xl ">
+                                                        <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
 
-                                                </div>
+                                                    </div>
+                                                </center>
                                                 <br>
                                                 <br>
                                             </td>
 
-                                            <td>{{ $item->visi }}</td>
-                                            <td>{{ $item->misi }}</td>
+                                            <!-- <td>{{ $item->visi }}</td>
+                                            <td>{{ $item->misi }}</td> -->
 
                                             <td>
                                                 <div class="form-button-action">

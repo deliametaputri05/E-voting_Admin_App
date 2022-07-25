@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\JurusanRequest;
 use App\Models\Jurusan;
+use App\Models\Ormawa;
 
 class JurusanController extends Controller
 {
@@ -28,7 +29,8 @@ class JurusanController extends Controller
      */
     public function create()
     {
-        return view('admin.jurusan.create');
+        $ormawa = Ormawa::all();
+        return view('admin.jurusan.create', compact('ormawa'));
     }
 
     /**
@@ -65,8 +67,10 @@ class JurusanController extends Controller
      */
     public function edit(Jurusan $jurusan)
     {
+        $ormawa = Ormawa::all();
         return view('admin.jurusan.edit', [
-            'item' => $jurusan
+            'item' => $jurusan,
+            'ormawa' => $ormawa
         ]);
     }
 

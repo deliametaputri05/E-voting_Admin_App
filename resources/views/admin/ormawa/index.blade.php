@@ -64,10 +64,12 @@
                                             <td>{{ $item->label }}</td>
                                             <td>
                                                 <br>
-                                                <div class="avatar avatar-xl ">
-                                                    <img src="{{ $item->logo }}" alt="..." class="avatar-img rounded-circle" width="100px">
+                                                <center>
+                                                    <div class="avatar avatar-xl ">
+                                                        <img src="{{ $item->logo }}" alt="..." class="avatar-img rounded-circle" width="100px">
 
-                                                </div>
+                                                    </div>
+                                                </center>
                                                 <br>
                                                 <br>
                                             </td>

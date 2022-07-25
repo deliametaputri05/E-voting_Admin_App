@@ -23,8 +23,8 @@ class HimraVotingController extends Controller
         $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa',  5)->paginate();
         $ormawa = Ormawa::all()->where('id', 5);
         $jumlah = Kandidat::all()->where('id_ormawa', 5)->sum('jumlah_suara');
-        $pemenang = Kandidat::all()->where('id_ormawa', 5)->max('jumlah_suara');
-        $data = Kandidat::where('jumlah_suara', $pemenang)->get();
+        $pemenang = $kandidat->where('id_ormawa', 5)->max('jumlah_suara');
+        $data = $kandidat->where('jumlah_suara', $pemenang)->get();
         // dd($data);
 
         return view('admin.himra.voting.cetak', compact('kandidat', 'ormawa', 'jumlah', 'pemenang', 'data'));

@@ -110,9 +110,13 @@
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td class="align-items-center"><br>
-                                                <div class="avatar avatar-xl">
-                                                    <img src="{{ $item->profile_photo_url }}" alt="..." class="avatar-img rounded-circle">
-                                                </div><br><br>
+
+                                                <center>
+                                                    <div class="avatar avatar-xl">
+                                                        <img src="{{ $item->profile_photo_url }}" alt="..." class="avatar-img rounded-circle">
+                                                    </div>
+                                                </center>
+                                                <br><br>
                                             </td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->roles }}</td>

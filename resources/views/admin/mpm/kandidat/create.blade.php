@@ -71,16 +71,7 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="id_clnWakil">Calon Wakil</label>
-                                                        <select class="form-control" id="id_clnWakil" name="id_clnWakil">
 
-                                                            <option value=null>--- Pilih Calon Wakil ---</option>
-                                                            @foreach ($calonWakil as $clnWakil)
-                                                            <option value="{{ $clnWakil->id }}">{{ $clnWakil->nama }} ({{ $clnWakil->nim }})</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
 
                                                     <div class="form-group">
                                                         <label for="no_urut">Nomor Urut</label>

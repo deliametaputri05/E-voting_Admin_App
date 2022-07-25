@@ -50,7 +50,7 @@
 
                                             <th class="text-center">No urut</th>
                                             <th class="text-center">Calon Ketua</th>
-                                            <th class="text-center">Calon Wakil</th>
+
                                             <th class="text-center">Foto</th>
                                             <th class="text-center">Hasil Suara</th>
 
@@ -65,7 +65,7 @@
                                             <!-- <td class="text-center">{{ $kandidat->count() * ($kandidat->currentPage() - 1) + $loop->iteration }}</td> -->
                                             <td class="text-center">{{ $item->no_urut }}</td>
                                             <td class="text-center">{{ $item->calonKetua->nama }}</td>
-                                            <td class="text-center">{{ $item->calonWakil->nama }}</td>
+
                                             <td class="">
                                                 <br>
                                                 <center>

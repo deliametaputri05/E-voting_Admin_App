@@ -84,15 +84,15 @@
                 <br>
                 <h3>SELAMAT KEPADA KETUA DAN WAKIL KETUA HIMPUNAN TERPILIH</h3>
                 <br>
-                @foreach ($data as $dt)
+
                 <div class="row justify-content-center">
                     <div class="col-sm-4 mb-3 ">
 
                         <div class="card">
                             <h5 class="card-header">Ketua Terpilih</h5>
-                            <img src="{{ $dt->calonKetua->foto }}" class="card-img-top" alt="gambar">
+                            <img src="{{ $data->calonKetua->foto }}" class="card-img-top" alt="gambar">
                             <div class="card-body">
-                                <h4 class="card-title">{{ $dt->calonKetua->nama}}</h4>
+                                <h4 class="card-title">{{ $data->calonKetua->nama}}</h4>
 
                             </div>
 
@@ -100,7 +100,7 @@
 
                     </div>
 
-                    @endforeach
+
                 </div>
 
 

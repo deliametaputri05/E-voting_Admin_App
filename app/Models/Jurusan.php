@@ -14,10 +14,14 @@ class Jurusan extends Model
     protected $table = "jurusan";
 
     protected $fillable = [
-        'nama', 'jenjang'
+        'nama', 'jenjang', 'id_ormawa'
 
     ];
 
+    public function ormawa()
+    {
+        return $this->hasOne(Ormawa::class, 'id', 'id_ormawa');
+    }
     public function getCreatedAtAttribute($created_at)
     {
         return Carbon::parse($created_at)

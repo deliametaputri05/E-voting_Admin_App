@@ -23,8 +23,8 @@ class BemVotingController extends Controller
         $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa',  2)->paginate();
         $ormawa = Ormawa::all()->where('id', 2);
         $jumlah = Kandidat::all()->where('id_ormawa', 2)->sum('jumlah_suara');
-        $pemenang = Kandidat::all()->where('id_ormawa', 2)->max('jumlah_suara');
-        $data = Kandidat::where('jumlah_suara', $pemenang)->get();
+        $pemenang = $kandidat->where('id_ormawa', 2)->max('jumlah_suara');
+        $data = $kandidat->where('jumlah_suara', $pemenang);
 
         return view('admin.bem.voting.cetak', compact('kandidat', 'ormawa', 'jumlah', 'pemenang', 'data'));
     }

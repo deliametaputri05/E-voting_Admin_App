@@ -5,7 +5,6 @@ namespace App\Http\Controllers\MPM;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\KandidatRequest;
 use App\Models\CalonKetua;
-use App\Models\CalonWakil;
 use App\Models\Kandidat;
 use App\Models\Pemira;
 use App\Models\Ormawa;
@@ -19,7 +18,7 @@ class MpmKandidatController extends Controller
      */
     public function index()
     {
-        $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa', '=', 1)->paginate();
+        $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua'])->where('id_ormawa', '=', 1)->paginate();
 
         return view('admin.mpm.kandidat.index', [
             'kandidat' => $kandidat
@@ -36,8 +35,7 @@ class MpmKandidatController extends Controller
         $ormawa = Ormawa::all();
         $pemira = Pemira::all();
         $calonKetua = CalonKetua::all()->where('id_ormawa', '=', 1);
-        $calonWakil = CalonWakil::all()->where('id_ormawa', '=', 1);
-        return view('admin.mpm.kandidat.create', compact('ormawa', 'pemira', 'calonKetua', 'calonWakil'));
+        return view('admin.mpm.kandidat.create', compact('ormawa', 'pemira', 'calonKetua'));
     }
 
     /**
@@ -52,7 +50,6 @@ class MpmKandidatController extends Controller
 
         $data['id_ormawa'] = 1;
         $data['id_pemira'] = 1;
-        $data['jumlah_suara'] = 0;
         $data['foto'] = $request->file('foto')->store('assets/mpm/kandidat', 'public');
 
         Kandidat::create($data);
@@ -81,12 +78,11 @@ class MpmKandidatController extends Controller
     {
         $kandidat = Kandidat::findOrFail($id);
         $calonKetua = CalonKetua::where('id_ormawa', '=', 1);
-        $calonWakil = CalonWakil::where('id_ormawa', '=', 1);
         return view('admin.mpm.kandidat.edit', [
             'id' => $id,
             'item' => $kandidat,
             'calonKetua' => $calonKetua,
-            'calonWakil' => $calonWakil
+
         ]);
     }
 
@@ -123,7 +119,6 @@ class MpmKandidatController extends Controller
     {
         $kandidat = Kandidat::findOrFail($id);
         $kandidat->delete();
-
 
         return redirect()->route('mpmKandidat.index');
     }

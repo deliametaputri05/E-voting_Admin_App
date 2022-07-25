@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\MPM;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\KandidatRequest;
+use Illuminate\Http\Request;
 use App\Models\Kandidat;
 use App\Models\Ormawa;
-use App\Models\Pemira;
-use \PDF;
 
 class MpmVotingController extends Controller
 {
@@ -17,7 +15,6 @@ class MpmVotingController extends Controller
 
         return view('admin.mpm.voting.index', [
             'kandidat' => $kandidat
-
         ]);
     }
 
@@ -26,10 +23,9 @@ class MpmVotingController extends Controller
         $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa',  1)->paginate();
         $ormawa = Ormawa::all()->where('id', 1);
         $jumlah = Kandidat::all()->where('id_ormawa', 1)->sum('jumlah_suara');
-        $pemenang = Kandidat::all()->where('id_ormawa', 1)->max('jumlah_suara');
-        $data = Kandidat::where('jumlah_suara', $pemenang)->get();
+        $pemenang = $kandidat->where('id_ormawa', 1)->max('jumlah_suara');
+        $data = $kandidat->where('jumlah_suara', $pemenang);
         // dd($data);
-
 
         return view('admin.mpm.voting.cetak', compact('kandidat', 'ormawa', 'jumlah', 'pemenang', 'data'));
     }

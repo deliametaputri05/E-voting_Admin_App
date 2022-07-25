@@ -64,13 +64,15 @@
                                             <!-- <td class="text-center">{{ $kandidat->count() * ($kandidat->currentPage() - 1) + $loop->iteration }}</td> -->
                                             <td class="text-center">{{ $item->no_urut }}</td>
                                             <td class="text-center">{{ $item->calonKetua->nama }}</td>
-                                            <td class="text-center">{{ $item->calonWakil->nama }}</td>
+
                                             <td class="">
                                                 <br>
-                                                <div class="avatar avatar-xl ">
-                                                    <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
+                                                <center>
+                                                    <div class="avatar avatar-xl ">
+                                                        <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
 
-                                                </div>
+                                                    </div>
+                                                </center>
                                                 <br>
                                                 <br>
                                             </td>

@@ -21,6 +21,8 @@ class HimakesKandidatController extends Controller
     {
         $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa', '=', 6)->paginate();
 
+
+
         return view('admin.himakes.kandidat.index', [
             'kandidat' => $kandidat
         ]);

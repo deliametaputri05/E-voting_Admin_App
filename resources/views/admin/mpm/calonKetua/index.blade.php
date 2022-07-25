@@ -68,10 +68,12 @@
                                             <td>{{ $item->nama }}</td>
                                             <td>
                                                 <br>
-                                                <div class="avatar avatar-xl ">
-                                                    <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
+                                                <center>
+                                                    <div class="avatar avatar-xl ">
+                                                        <img src="{{ $item->foto }}" alt="..." class="avatar-img rounded-circle" width="100px">
 
-                                                </div>
+                                                    </div>
+                                                </center>
                                                 <br>
                                                 <br>
                                             </td>

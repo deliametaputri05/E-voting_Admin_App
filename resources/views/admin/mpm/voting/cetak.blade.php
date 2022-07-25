@@ -67,7 +67,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{ $knd->no_urut}}</h4>
                                 <p class="card-text">{{ $knd->calonKetua->nama}}</p>
-                                <p class="card-text">{{ $knd->calonWakil->nama}}</p>
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="card-title">{{ $knd->jumlah_suara}} suara</h5>
@@ -82,7 +82,7 @@
                 <br>
                 <h3>Total suara masuk: {{$jumlah}}</h3>
                 <br>
-                <h3>SELAMAT KEPADA KETUA DAN WAKIL KETUA TERPILIH</h3>
+                <h3>SELAMAT KEPADA KETUA TERPILIH</h3>
                 <br>
                 @foreach ($data as $dt)
 
@@ -100,19 +100,7 @@
                         </div>
 
                     </div>
-                    <div class="col-sm-4 mb-3 ">
 
-                        <div class="card">
-                            <h5 class="card-header">Wakil Ketua Terpilih</h5>
-                            <img src="{{ $dt->calonWakil->foto }}" class="card-img-top" alt="gambar">
-                            <div class="card-body">
-                                <h4 class="card-title">{{ $dt->calonWakil->nama}}</h4>
-
-                            </div>
-
-                        </div>
-
-                    </div>
                 </div>
 
                 @endforeach

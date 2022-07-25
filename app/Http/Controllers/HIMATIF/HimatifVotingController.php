@@ -23,8 +23,8 @@ class HimatifVotingController extends Controller
         $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa',  3)->paginate();
         $ormawa = Ormawa::all()->where('id', 3);
         $jumlah = Kandidat::all()->where('id_ormawa', 3)->sum('jumlah_suara');
-        $pemenang = Kandidat::all()->where('id_ormawa', 3)->max('jumlah_suara');
-        $data = Kandidat::where('jumlah_suara', $pemenang)->get();
+        $pemenang = $kandidat->where('id_ormawa', 3)->max('jumlah_suara');
+        $data = $kandidat->where('jumlah_suara', $pemenang);
         // dd($data);
 
         return view('admin.himatif.voting.cetak', compact('kandidat', 'ormawa', 'jumlah', 'pemenang', 'data'));

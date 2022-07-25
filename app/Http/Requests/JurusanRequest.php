@@ -28,6 +28,7 @@ class JurusanRequest extends FormRequest
 
             'nama' => 'required|string',
             'jenjang' => 'required|string',
+            'id_ormawa' => 'required|integer',
 
         ];
     }

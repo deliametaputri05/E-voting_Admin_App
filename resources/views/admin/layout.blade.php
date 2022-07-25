@@ -236,11 +236,7 @@
                                             <span class="sub-item">Calon Ketua</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="/dashboard/mpmCalonWakil">
-                                            <span class="sub-item">Calon Wakil</span>
-                                        </a>
-                                    </li>
+
                                     <li>
                                         <a href="/dashboard/mpmKandidat">
                                             <span class="sub-item">Kandidat</span>
