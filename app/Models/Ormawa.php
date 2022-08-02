@@ -15,7 +15,7 @@ class Ormawa extends Model
     protected $table = "ormawa";
 
     protected $fillable = [
-        'nama', 'logo'
+        'nama', 'logo', 'label', 'deskripsi'
 
     ];
 

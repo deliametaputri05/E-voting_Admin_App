@@ -60,7 +60,7 @@ class VotingController extends Controller
         }
 
         if (Voting::where('id_ormawa', $request->id_ormawa)->where('id_mhs', $request->id_mhs)->exists()) {
-            return ResponseFormatter::error('Voting sudah pernah dilakukan','Voting sudah pernah dilakukan', 201);
+            return ResponseFormatter::error('Voting sudah pernah dilakukan', 'Voting sudah pernah dilakukan', 201);
         }
 
         $vote = Voting::create([
@@ -80,6 +80,6 @@ class VotingController extends Controller
 
         $vote = Voting::with(['kandidat', 'mahasiswa', 'ormawa', 'pemira'])->where('id_kandidat', $vote->id_kandidat)->first();
         // dd($vote);
-        return ResponseFormatter::success($vote, 'Berhasil');
+        return ResponseFormatter::success($vote, 'Voting Berhasil');
     }
 }

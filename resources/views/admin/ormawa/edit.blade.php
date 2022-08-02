@@ -80,8 +80,12 @@
 
                                                     </div>
                                                     <div class="form-group">
+                                                        <label for="deskripsi">Deskripsi </label>
+                                                        <textarea class="form-control" value="{{ old('deskripsi') ?? $item->deskripsi }}" name="deskripsi" id="desc" rows="5" placeholder="deskripsi">{{ $item->deskripsi }}</textarea>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label for="logo">Logo</label>
-                                                        <input type="file" class="form-control-file" id="logo" name="logo" placeholder="Logo Perusahaan">
+                                                        <input type="file" class="form-control-file" id="logo" name="logo" placeholder="Logo Ormawa">
                                                         <br>
                                                         <div class="avatar avatar-xl">
                                                             <img src=" {{ $item->logo }}" width="100" alt="Image" class="avatar-img rounded-circle">

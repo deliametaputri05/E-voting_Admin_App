@@ -81,9 +81,10 @@ class OrmawaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(OrmawaRequest $request, Ormawa $ormawa)
+    public function update(OrmawaRequest $request,  $id)
     {
         $data = $request->all();
+        $ormawa = Ormawa::findOrFail($id);
         // dd($data);
         if ($request->file('logo')) {
             $data['logo'] = $request->file('logo')->store('assets/ormawa', 'public');

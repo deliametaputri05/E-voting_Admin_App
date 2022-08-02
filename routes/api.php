@@ -34,7 +34,7 @@ Route::get('mahasiswa', [MahasiswaController::class, 'all']);
 Route::get('calonKetua', [CalonKetuaController::class, 'all']);
 Route::get('calonWakil', [CalonWakilController::class, 'all']);
 Route::get('kandidat', [KandidatController::class, 'all']);
-Route::get('kandidats/{id_pemira}', [KandidatController::class, 'show']);
+Route::get('kandidats', [KandidatController::class, 'show']);
 Route::get('ormawa', [OrmawaController::class, 'all']);
 Route::get('pemira', [PemiraController::class, 'all']);
 Route::post('voting', [VotingController::class, 'vote']);

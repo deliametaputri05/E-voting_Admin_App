@@ -18,6 +18,7 @@ class OrmawaSeeder extends Seeder
             'id' => 1,
             'nama' => "Majelis Permusyawaratan Mahasiswa",
             'label' => 'MPM',
+            'deskripsi' => 'ini deskripsi',
             'logo' => 'assets/ormawa/mpm.png',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
@@ -26,6 +27,7 @@ class OrmawaSeeder extends Seeder
             'id' => 2,
             'nama' => "Badan Eksekutif Mahasiswa",
             'label' => 'BEM',
+            'deskripsi' => 'ini deskripsi',
             'logo' => 'assets/ormawa/bem.png',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
@@ -34,6 +36,7 @@ class OrmawaSeeder extends Seeder
             'id' => 3,
             'nama' => "Himpunan Mahasiswa Teknik Informatika",
             'label' => 'HIMATIF',
+            'deskripsi' => 'ini deskripsi',
             'logo' => 'assets/ormawa/himatif.png',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
@@ -42,6 +45,7 @@ class OrmawaSeeder extends Seeder
             'id' => 4,
             'nama' => "Himpunan Mahasiswa Mesin",
             'label' => 'HMM',
+            'deskripsi' => 'ini deskripsi',
             'logo' => 'assets/ormawa/hmm.png',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
@@ -50,6 +54,7 @@ class OrmawaSeeder extends Seeder
             'id' => 5,
             'nama' => "Himpunan Mahasiswa Refrigerasi dan Tata Udara",
             'label' => 'HMM',
+            'deskripsi' => 'ini deskripsi',
             'logo' => 'assets/ormawa/himra.png',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
@@ -58,6 +63,7 @@ class OrmawaSeeder extends Seeder
             'id' => 6,
             'nama' => "Himpunan Mahasiswa Kesehatan",
             'label' => 'HIMAKES',
+            'deskripsi' => 'ini deskripsi',
             'logo' => 'assets/ormawa/himakes.png',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')

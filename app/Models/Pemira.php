@@ -24,6 +24,12 @@ class Pemira extends Model
         return $this->hasOne(Ormawa::class, 'id', 'id_ormawa');
     }
 
+    public function voting()
+    {
+        return $this->belongsTo(Voting::class, 'id', 'id_pemira');
+    }
+
+
     public function getCreatedAtAttribute($created_at)
     {
         return Carbon::parse($created_at)

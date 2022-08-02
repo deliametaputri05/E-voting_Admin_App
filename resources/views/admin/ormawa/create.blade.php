@@ -74,6 +74,10 @@
 
                                                     </div>
                                                     <div class="form-group">
+                                                        <label for="deskripsi">Deskripsi</label>
+                                                        <textarea class="form-control" value="{{ old('deskripsi') }}" name="deskripsi" id="desc" rows="5" placeholder="deskripsi"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label for="logo">Logo</label>
                                                         <input type="file" class="form-control-file" id="logo" name="logo" placeholder="Logo Ormawa">
                                                     </div>

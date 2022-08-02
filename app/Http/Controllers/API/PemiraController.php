@@ -41,13 +41,17 @@ class PemiraController extends Controller
         // dd($pemira);
         $jurusan = Jurusan::where('id', $request->id_jurusan)->get();
         $arrayWhere = [];
+
+
         foreach ($jurusan as $item) {
             $arrayWhere[] = $item['id_ormawa'];
         }
 
         // dd($arrayWhere); 
         // $pemira = Pemira::with(['ormawa'])->get();
-        $pemira = Pemira::with(['ormawa'])->orWhereNotIn('id_ormawa', $allJurusanID)->orWhereIn('id_ormawa', $arrayWhere)->get();
+        $pemira = Pemira::with(['ormawa', 'voting' => function ($q) use ($request) {
+            return $q->where('id_mhs', $request->id_mhs);
+        }])->orWhereNotIn('id_ormawa', $allJurusanID)->orWhereIn('id_ormawa', $arrayWhere)->get();
 
 
         return ResponseFormatter::success(

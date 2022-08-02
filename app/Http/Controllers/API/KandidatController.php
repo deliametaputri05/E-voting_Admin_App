@@ -5,6 +5,8 @@ namespace App\Http\Controllers\API;
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\Kandidat;
+use App\Models\Voting;
+use App\Models\Ormawa;
 use Illuminate\Http\Request;
 
 class KandidatController extends Controller
@@ -55,26 +57,18 @@ class KandidatController extends Controller
         );
     }
 
-    public function show($id_ormawa)
+    public function show(Request $request)
     {
-        $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa', $id_ormawa)->get();
-
-
-        // if ($kandidat) {
-        //     return response()->json([
-        //         'success' => true,
-        //         'message' => "Detail kandidat $kandidat!",
-        //         'data'    => $kandidat
-        //     ], 200);
-        // } else {
-        //     return response()->json([
-        //         'success' => false,
-        //         'message' => 'Post Tidak Ditemukan!',
-        //         'data'    => ''
-        //     ], 401);
-        // }
+        $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa', $request->id_ormawa)->get();
+        $voting = Voting::where('id_mhs', $request->id_mhs)->where('id_ormawa', $request->id_ormawa)->get();
+        $total = Kandidat::where('id_ormawa', $request->id_ormawa)->sum('jumlah_suara');
+        $respons = [
+            "data" => $kandidat,
+            "is_voting" => count($voting) > 0 ? true : false,
+            "total" => $total
+        ];
         return ResponseFormatter::success(
-            $kandidat,
+            $respons,
             'Data list Kandidat berhasil diambil'
         );
     }

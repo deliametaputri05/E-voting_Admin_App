@@ -17,6 +17,7 @@ class CreateOrmawasTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('label');
+            $table->text('deskripsi');
             $table->text('logo');
             $table->softDeletes();
             $table->timestamps();

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
 
-    <link rel="icon" href="/assets/img/logo_evote.png" type="image/x-icon" />
+    <link rel="icon" href="/assets/img/logo_kpu.png" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -41,7 +41,7 @@
             <div class="logo-header" data-background-color="blue">
 
                 <a href="index.html" class="logo">
-                    <img src="/assets/img/logo_evote.png" width="40px" alt="navbar brand" class="navbar-brand">
+                    <img src="/assets/img/logo_kpu.png" width="40px" alt="navbar brand" class="navbar-brand">
                     <h1 style="float: right; padding-top: 15px; padding-left: 15px; font-size: 20px; font-weight: bold; color: white;">E-voting</h1>
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
