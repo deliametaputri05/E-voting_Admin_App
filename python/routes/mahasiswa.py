@@ -1,9 +1,9 @@
-from fastapi import APIRouter, File, Form, UploadFile, BackgroundTasks
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter, File, Form, UploadFile
+
 from fastapi.encoders import jsonable_encoder
 from config.db import conn
 from models.table import mahasiswa
-from PIL import Image
+
 import cv2
 
 import face_recognition
@@ -22,37 +22,6 @@ mhs_router=APIRouter(
 @mhs_router.get("/")
 async def read_data():
     return conn.execute(mahasiswa.select()).fetchall()
-
-def resize_image(filename: str):
-    sizes = [{
-        "width": 1280,
-        "height": 720
-    }, {
-        "width": 640,
-        "height": 480
-    }]
-
-    for size in sizes:
-        size_defined = size['width'], size['height']
-
-        image = Image.open(path + filename, mode="r")
-        image.thumbnail(size_defined)
-        image.save(path + str(size['height']) + "_" + filename)
-    print("success")
-
-
-@mhs_router.post("/upload/file")
-async def upload_file(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
-
-    # SAVE FILE ORIGINAL
-    with open(path + file.filename, "wb") as myfile:
-        content = await file.read()
-        myfile.write(content)
-        myfile.close()
-
-    # RESIZE IMAGES
-    background_tasks.add_task(resize_image, filename=file.filename)
-    return JSONResponse(content={"message": "success"})
 
 @mhs_router.post("/facerecognition")
 async def faceRecognition(face_image: UploadFile = File(...) ,nim: int = Form(...)):
@@ -109,6 +78,11 @@ async def faceRecognition(face_image: UploadFile = File(...) ,nim: int = Form(..
         
         results = face_recognition.compare_faces(
             [bill_face_encoding], unknown_face_encoding, tolerance=0.5)
+
+        print("citra latih")
+        print(bill_face_encoding)
+        print("citra uji")
+        print(unknown_face_encoding)
         
         if results[0]:
             cursor = conn.execute(mahasiswa.select().where(mahasiswa.c.nim == nim))

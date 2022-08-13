@@ -19,6 +19,12 @@ class Ormawa extends Model
 
     ];
 
+    public function kandidat()
+    {
+        // return $this->belongsTo(Kandidat::class, 'id', 'id_ormawa');
+        
+    }
+
     public function getCreatedAtAttribute($created_at)
     {
         return Carbon::parse($created_at)

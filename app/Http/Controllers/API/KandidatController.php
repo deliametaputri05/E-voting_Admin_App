@@ -61,11 +61,11 @@ class KandidatController extends Controller
     {
         $kandidat = Kandidat::with(['ormawa', 'pemira', 'calonKetua', 'calonWakil'])->where('id_ormawa', $request->id_ormawa)->get();
         $voting = Voting::where('id_mhs', $request->id_mhs)->where('id_ormawa', $request->id_ormawa)->get();
-        $total = Kandidat::where('id_ormawa', $request->id_ormawa)->sum('jumlah_suara');
+        // $total = Kandidat::where('id_ormawa', $request->id_ormawa)->sum('jumlah_suara');
         $respons = [
             "data" => $kandidat,
             "is_voting" => count($voting) > 0 ? true : false,
-            "total" => $total
+            // "total" => $total
         ];
         return ResponseFormatter::success(
             $respons,

@@ -36,6 +36,7 @@ class OrmawaController extends Controller
 
 
         $ormawa = Ormawa::get();
+        // $res = $ormawa->find($id);
 
         if ($nama) {
             $ormawa->where('nama', 'like', '%' . $nama . '%');

@@ -26,5 +26,3 @@ app.include_router(mhs_router)
 async def root():
     return {"message": "Hello Bigger Applications!"}
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="192.168.0.110", port=5000)
